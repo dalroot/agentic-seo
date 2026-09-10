@@ -2,8 +2,8 @@
 
 $ErrorActionPreference = 'Stop'
 
-$REPO_URL        = if ($env:REPO_URL) { $env:REPO_URL } else { 'https://github.com/T4wroot/agentic-seo.git' }
-$GITHUB_REPO     = if ($env:GITHUB_REPO) { $env:GITHUB_REPO } else { 'T4wroot/agentic-seo' }
+$REPO_URL        = if ($env:REPO_URL) { $env:REPO_URL } else { 'https://github.com/dalroot/agentic-seo.git' }
+$GITHUB_REPO     = if ($env:GITHUB_REPO) { $env:GITHUB_REPO } else { 'dalroot/agentic-seo' }
 $GITHUB_REF      = if ($env:GITHUB_REF)  { $env:GITHUB_REF }  else { 'main' }
 $SKILL_NAME      = 'seo'
 $TARGET          = 'claude'

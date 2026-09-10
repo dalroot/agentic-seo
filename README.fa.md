@@ -4,9 +4,9 @@
 
 **[🇮🇷 فارسی (Persian)](README.fa.md) | [🇺🇸 English](README.md)**
 
-[![Release](https://img.shields.io/github/v/release/T4wroot/agentic-seo?style=for-the-badge&color=blue)](https://github.com/T4wroot/agentic-seo/releases)
-[![GitHub Pages](https://img.shields.io/github/actions/workflow/status/T4wroot/agentic-seo/deploy-pages.yml?branch=master&label=Live%20Site&style=for-the-badge&color=success)](https://T4wroot.github.io/agentic-seo)
-[![Python](https://img.shields.io/badge/Python-91%25-yellow?style=for-the-badge&logo=python)](https://github.com/T4wroot/agentic-seo)
+[![Release](https://img.shields.io/github/v/release/dalroot/agentic-seo?style=for-the-badge&color=blue)](https://github.com/dalroot/agentic-seo/releases)
+[![GitHub Pages](https://img.shields.io/github/actions/workflow/status/dalroot/agentic-seo/deploy-pages.yml?branch=master&label=Live%20Site&style=for-the-badge&color=success)](https://dalroot.github.io/agentic-seo)
+[![Python](https://img.shields.io/badge/Python-91%25-yellow?style=for-the-badge&logo=python)](https://github.com/dalroot/agentic-seo)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
 > **جامع‌ترین پکیج ۳-در-۱ سئو و بهینه‌سازی موتورهای جستجوی هوش مصنوعی (GEO & AEO) ویژه دستیاران و ایجنت‌های کدنویسی** 🚀
@@ -16,7 +16,7 @@
 
 1. 📝 **مهارت‌های مارک‌داون (Markdown Skills):** بیش از ۱۶۰ مهارت بومی مارکتینگ، سئو و بازاریابی محتوا برای IDEها.
 2. 🐍 **اکوسیستم پیشرفته پایتون:** شامل ۸۹ اسکریپت تحلیلی (۸۸ اسکریپت پایتون + ۱ اسکریپت شل)، ۱۰ ایجنت متخصص (Specialist Agents) و نصب‌کننده‌های اختصاصی برای تمام محیط‌های توسعه.
-3. ✨ **داشبورد تعاملی (Interactive UI):** داشبورد شیشه‌ای مدرن (Glassmorphism) برای مشاهده زنده آمار و قابلیت‌ها ([مشاهده سایت زنده](https://T4wroot.github.io/agentic-seo)).
+3. ✨ **داشبورد تعاملی (Interactive UI):** داشبورد شیشه‌ای مدرن (Glassmorphism) برای مشاهده زنده آمار و قابلیت‌ها ([مشاهده سایت زنده](https://dalroot.github.io/agentic-seo)).
 
 ---
 
@@ -52,15 +52,15 @@
 ### لینوکس و مک (Linux & macOS)
 ```bash
 # نصب پیش‌فرض
-curl -fsSL https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh | bash -s -- --online
+curl -fsSL https://raw.githubusercontent.com/dalroot/agentic-seo/main/install.sh | bash -s -- --online
 
 # یا نصب اختصاصی برای پروژه جاری در یک IDE خاص (مثلا Antigravity یا Cursor):
-curl -fsSL https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh | bash -s -- --target antigravity
+curl -fsSL https://raw.githubusercontent.com/dalroot/agentic-seo/main/install.sh | bash -s -- --target antigravity
 ```
 
 ### ویندوز (Windows PowerShell)
 ```powershell
-irm https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.ps1 -OutFile install.ps1
+irm https://raw.githubusercontent.com/dalroot/agentic-seo/main/install.ps1 -OutFile install.ps1
 powershell -ExecutionPolicy Bypass -File .\install.ps1 --online
 ```
 

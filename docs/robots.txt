@@ -26,4 +26,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://T4wroot.github.io/agentic-seo/sitemap.xml
+Sitemap: https://dalroot.github.io/agentic-seo/sitemap.xml

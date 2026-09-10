@@ -4,9 +4,9 @@
 
 **[🇮🇷 فارسی (Persian)](README.fa.md) | [🇺🇸 English](README.md)**
 
-[![Release](https://img.shields.io/github/v/release/T4wroot/agentic-seo?style=for-the-badge&color=blue)](https://github.com/T4wroot/agentic-seo/releases)
-[![GitHub Pages](https://img.shields.io/github/actions/workflow/status/T4wroot/agentic-seo/deploy-pages.yml?branch=master&label=Live%20Site&style=for-the-badge&color=success)](https://T4wroot.github.io/agentic-seo)
-[![Python](https://img.shields.io/badge/Python-91%25-yellow?style=for-the-badge&logo=python)](https://github.com/T4wroot/agentic-seo)
+[![Release](https://img.shields.io/github/v/release/dalroot/agentic-seo?style=for-the-badge&color=blue)](https://github.com/dalroot/agentic-seo/releases)
+[![GitHub Pages](https://img.shields.io/github/actions/workflow/status/dalroot/agentic-seo/deploy-pages.yml?branch=master&label=Live%20Site&style=for-the-badge&color=success)](https://dalroot.github.io/agentic-seo)
+[![Python](https://img.shields.io/badge/Python-91%25-yellow?style=for-the-badge&logo=python)](https://github.com/dalroot/agentic-seo)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 > **The Ultimate, 3-in-1 SEO Skill for AI Agents** 🚀
@@ -15,11 +15,11 @@
 This repository merges three massive projects into one:
 1. 📝 **Native Markdown Skills**: 160+ native markdown skills for IDEs (Cursor/Claude).
 2. 🐍 **Advanced Python Ecosystem**: 88 Python scripts, 10 specialist agents, multi-IDE installers.
-3. ✨ **Interactive UI**: A glowing, OLED Glassmorphism [Live Dashboard](https://T4wroot.github.io/agentic-seo).
+3. ✨ **Interactive UI**: A glowing, OLED Glassmorphism [Live Dashboard](https://dalroot.github.io/agentic-seo).
 
 An LLM-first SEO analysis skill for agent IDEs and AI coding assistants, with 16 specialized sub-skills, 10 specialist agents, and 89 scripts used as evidence collectors and workflow automation.
 
-For detailed installation guidance, example prompts, report generation, troubleshooting, and the full script inventory, see the **[Agentic SEO Skill Wiki](https://github.com/T4wroot/agentic-seo/wiki)**.
+For detailed installation guidance, example prompts, report generation, troubleshooting, and the full script inventory, see the **[Agentic SEO Skill Wiki](https://github.com/dalroot/agentic-seo/wiki)**.
 
 ## 💻 IDE Compatibility
 
@@ -52,7 +52,7 @@ python3 scripts/reference_freshness.py resources/references --max-age-days 90
 
 ### Key Script Inventory
 
-The README only highlights the scripts most users reach for first. See the full 89-script list with purpose notes in the [Script Inventory wiki](https://github.com/T4wroot/agentic-seo/wiki/Script-Inventory).
+The README only highlights the scripts most users reach for first. See the full 89-script list with purpose notes in the [Script Inventory wiki](https://github.com/dalroot/agentic-seo/wiki/Script-Inventory).
 
 | Script | Best for |
 |---|---|
@@ -166,22 +166,22 @@ All `--online` commands below download the latest release package from GitHub au
 **Linux / macOS:**
 ```bash
 # Default: installs to every target at once
-curl -fsSL https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh | bash -s -- --online
+curl -fsSL https://raw.githubusercontent.com/dalroot/agentic-seo/main/install.sh | bash -s -- --online
 
 # Claude Code only
-curl -fsSL https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh | bash -s -- --online --target claude
+curl -fsSL https://raw.githubusercontent.com/dalroot/agentic-seo/main/install.sh | bash -s -- --online --target claude
 
 # User-wide (Claude + Codex)
-curl -fsSL https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh | bash -s -- --online --target global
+curl -fsSL https://raw.githubusercontent.com/dalroot/agentic-seo/main/install.sh | bash -s -- --online --target global
 
 # Every target, scoped to a project
-curl -fsSL https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh | bash -s -- --online --target all --project-dir /path/to/your/project
+curl -fsSL https://raw.githubusercontent.com/dalroot/agentic-seo/main/install.sh | bash -s -- --online --target all --project-dir /path/to/your/project
 ```
 
 **Windows (PowerShell 7+):**
 ```powershell
 # Download installer, then run with --online
-irm https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.ps1 -OutFile install.ps1
+irm https://raw.githubusercontent.com/dalroot/agentic-seo/main/install.ps1 -OutFile install.ps1
 
 # Default: installs to every target at once
 powershell -ExecutionPolicy Bypass -File .\install.ps1 --online
@@ -196,7 +196,7 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1 --online --target all --p
 ### From source
 
 ```bash
-git clone https://github.com/T4wroot/agentic-seo.git
+git clone https://github.com/dalroot/agentic-seo.git
 cd agentic-seo
 
 # Claude Code (most common)
@@ -248,7 +248,7 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1 --target all --project-di
 
 **Safer remote install (download, inspect, run):**
 ```bash
-curl -fsSLO https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh
+curl -fsSLO https://raw.githubusercontent.com/dalroot/agentic-seo/main/install.sh
 less install.sh                  # review before running
 bash install.sh --online
 ```

@@ -12,8 +12,8 @@ Agentic SEO equips coding assistants (Antigravity, Cursor, Claude Code, Windsurf
 - **GitHub Repository SEO**: Audits repository metadata, topics, community health, and search rankings.
 
 ## Key URLs
-- Live Website: https://T4wroot.github.io/agentic-seo/
-- Persian Documentation: https://T4wroot.github.io/agentic-seo/fa.html
-- Interactive Audit Dashboard: https://T4wroot.github.io/agentic-seo/audit-report.html
-- GitHub Repository: https://github.com/T4wroot/agentic-seo
-- Installation Script: https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh
+- Live Website: https://dalroot.github.io/agentic-seo/
+- Persian Documentation: https://dalroot.github.io/agentic-seo/fa.html
+- Interactive Audit Dashboard: https://dalroot.github.io/agentic-seo/audit-report.html
+- GitHub Repository: https://github.com/dalroot/agentic-seo
+- Installation Script: https://raw.githubusercontent.com/dalroot/agentic-seo/main/install.sh

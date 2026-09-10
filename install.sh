@@ -2,8 +2,8 @@
 
 set -euo pipefail
 
-REPO_URL="${REPO_URL:-https://github.com/T4wroot/agentic-seo.git}"
-GITHUB_REPO="${GITHUB_REPO:-T4wroot/agentic-seo}"
+REPO_URL="${REPO_URL:-https://github.com/dalroot/agentic-seo.git}"
+GITHUB_REPO="${GITHUB_REPO:-dalroot/agentic-seo}"
 GITHUB_REF="${GITHUB_REF:-main}"
 SKILL_NAME="seo"
 TARGET="claude"
@@ -84,7 +84,7 @@ Examples:
   bash install.sh --online --ref develop
 
 Safer remote install:
-  curl -fsSLO https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh
+  curl -fsSLO https://raw.githubusercontent.com/dalroot/agentic-seo/main/install.sh
   bash install.sh --target claude
 EOF
 }

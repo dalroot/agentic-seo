@@ -4,7 +4,7 @@
 
 Current release: `v3.0.0`
 
-https://github.com/T4wroot/agentic-seo/releases/tag/v3.0.0
+https://github.com/dalroot/agentic-seo/releases/tag/v3.0.0
 
 Published assets:
 

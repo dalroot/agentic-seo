@@ -1,6 +1,6 @@
 # GitHub SEO Report
 
-- Repository: `T4wroot/agentic-seo`
+- Repository: `dalroot/agentic-seo`
 - Generated (UTC): `2026-09-02T19:26:26+00:00`
 - Provider mode: `auto`
 - Overall score: `27.67`
@@ -137,7 +137,7 @@
 
 ## Backlink Distribution Plan
 
-- Target repo URL: `https://github.com/T4wroot/agentic-seo`
+- Target repo URL: `https://github.com/dalroot/agentic-seo`
 
 ### Suggested Post Titles
 

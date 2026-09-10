@@ -1,6 +1,6 @@
 {
   "timestamp_utc": "2026-09-02T19:25:54+00:00",
-  "repo": "T4wroot/agentic-seo",
+  "repo": "dalroot/agentic-seo",
   "auth_context": {
     "token_present": false,
     "gh_available": true,
@@ -183,7 +183,7 @@
         "uniques": 18
       },
       {
-        "referrer": "t4wroot.github.io",
+        "referrer": "dalroot.github.io",
         "count": 10,
         "uniques": 6
       },
@@ -215,61 +215,61 @@
     ],
     "paths": [
       {
-        "path": "/T4wroot/agentic-seo",
+        "path": "/dalroot/agentic-seo",
         "title": "Overview",
         "count": 598,
         "uniques": 422
       },
       {
-        "path": "/T4wroot/agentic-seo/blob/master/README.fa.md",
+        "path": "/dalroot/agentic-seo/blob/master/README.fa.md",
         "title": "/blob/master/README.fa.md",
         "count": 45,
         "uniques": 31
       },
       {
-        "path": "/T4wroot/agentic-seo/issues",
+        "path": "/dalroot/agentic-seo/issues",
         "title": "/issues",
         "count": 20,
         "uniques": 16
       },
       {
-        "path": "/T4wroot/agentic-seo/tree/master/skills",
+        "path": "/dalroot/agentic-seo/tree/master/skills",
         "title": "/tree/master/skills",
         "count": 18,
         "uniques": 11
       },
       {
-        "path": "/T4wroot/agentic-seo/releases/tag/v1.0.0",
+        "path": "/dalroot/agentic-seo/releases/tag/v1.0.0",
         "title": "/releases/tag/v1.0.0",
         "count": 14,
         "uniques": 13
       },
       {
-        "path": "/T4wroot/agentic-seo/tree/master",
+        "path": "/dalroot/agentic-seo/tree/master",
         "title": "/tree/master",
         "count": 13,
         "uniques": 11
       },
       {
-        "path": "/T4wroot/agentic-seo/tree/master/.github/workflows",
+        "path": "/dalroot/agentic-seo/tree/master/.github/workflows",
         "title": "/tree/master/.github/workflows",
         "count": 12,
         "uniques": 11
       },
       {
-        "path": "/T4wroot/agentic-seo/blob/master/README.md",
+        "path": "/dalroot/agentic-seo/blob/master/README.md",
         "title": "/blob/master/README.md",
         "count": 11,
         "uniques": 11
       },
       {
-        "path": "/T4wroot/agentic-seo/blob/master/SKILL.md",
+        "path": "/dalroot/agentic-seo/blob/master/SKILL.md",
         "title": "/blob/master/SKILL.md",
         "count": 11,
         "uniques": 8
       },
       {
-        "path": "/T4wroot/agentic-seo/blob/master/resources/skills/seo-page.md",
+        "path": "/dalroot/agentic-seo/blob/master/resources/skills/seo-page.md",
         "title": "/blob/master/resources/skills/seo-page.md",
         "count": 9,
         "uniques": 5

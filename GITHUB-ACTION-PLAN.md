@@ -1,6 +1,6 @@
 # GitHub Action Plan
 
-- Repository: `T4wroot/agentic-seo`
+- Repository: `dalroot/agentic-seo`
 - Generated (UTC): `2026-09-02T19:26:26+00:00`
 - Source report: `GITHUB-SEO-REPORT.md`
 - Overall score: `27.67`
@@ -53,11 +53,11 @@ Top topic opportunities to validate and adopt when relevant:
 
 | Channel | Cadence | Next Action |
 |---------|---------|-------------|
-| Medium | 1 post per major release | Publish/update a post and link to `https://github.com/T4wroot/agentic-seo` |
-| Dev.to | 1 launch post + update posts quarterly | Publish/update a post and link to `https://github.com/T4wroot/agentic-seo` |
-| Hashnode | Bi-monthly | Publish/update a post and link to `https://github.com/T4wroot/agentic-seo` |
-| Personal/Company Blog | Monthly | Publish/update a post and link to `https://github.com/T4wroot/agentic-seo` |
-| LinkedIn Article | Per release | Publish/update a post and link to `https://github.com/T4wroot/agentic-seo` |
+| Medium | 1 post per major release | Publish/update a post and link to `https://github.com/dalroot/agentic-seo` |
+| Dev.to | 1 launch post + update posts quarterly | Publish/update a post and link to `https://github.com/dalroot/agentic-seo` |
+| Hashnode | Bi-monthly | Publish/update a post and link to `https://github.com/dalroot/agentic-seo` |
+| Personal/Company Blog | Monthly | Publish/update a post and link to `https://github.com/dalroot/agentic-seo` |
+| LinkedIn Article | Per release | Publish/update a post and link to `https://github.com/dalroot/agentic-seo` |
 
 ## Measurement Cadence
 
