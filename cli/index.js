@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { program } from 'commander';
-import { execSync } from 'child_process';
+import { spawnSync } from 'child_process';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -32,14 +32,20 @@ program
   .action((options) => {
     try {
       const scriptPath = path.join(__dirname, '..', 'src', 'agentic_seo', 'scripts', 'search.py');
-      let command = `python "${scriptPath}"`;
+      const args = [scriptPath];
       
-      if (options.industry) command += ` --industry "${options.industry}"`;
-      if (options.framework) command += ` --framework "${options.framework}"`;
-      if (options.antiPatterns) command += ` --anti-patterns`;
+      if (options.industry) args.push('--industry', String(options.industry));
+      if (options.framework) args.push('--framework', String(options.framework));
+      if (options.antiPatterns) args.push('--anti-patterns');
 
-      const output = execSync(command, { encoding: 'utf-8' });
-      console.log(output);
+      const result = spawnSync('python3', args, { encoding: 'utf-8' });
+      if (result.error) {
+        console.error('Error executing search script:', result.error.message);
+      } else if (result.status !== 0) {
+        if (result.stderr) console.error(result.stderr);
+      } else {
+        console.log(result.stdout);
+      }
     } catch (error) {
       console.error('Error executing search script:', error.message);
     }
