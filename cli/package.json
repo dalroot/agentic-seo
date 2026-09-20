@@ -10,7 +10,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "commander": "^11.1.0"
+    "commander": "^15.0.0"
   },
   "type": "module"
 }
