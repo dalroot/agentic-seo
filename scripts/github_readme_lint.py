@@ -67,8 +67,17 @@ def strip_code_fences(text: str) -> str:
 def extract_headings(markdown: str) -> list:
     headings = []
     lines = markdown.splitlines()
+    in_code_block = False
     for i, line in enumerate(lines, start=1):
-        m = re.match(r"^(#{1,6})\s+(.+?)\s*$", line.strip())
+        stripped = line.strip()
+        if stripped.startswith("```") or stripped.startswith("~~~"):
+            in_code_block = not in_code_block
+            continue
+
+        if in_code_block:
+            continue
+
+        m = re.match(r"^(#{1,6})\s+(.+?)\s*$", stripped)
         if m:
             headings.append({"line": i, "level": len(m.group(1)), "text": m.group(2).strip()})
             continue
@@ -78,9 +87,9 @@ def extract_headings(markdown: str) -> list:
         # =====
         if i < len(lines):
             next_line = lines[i].strip()
-            if line.strip() and re.match(r"^(=+|-+)\s*$", next_line):
+            if stripped and re.match(r"^(=+|-+)\s*$", next_line):
                 level = 1 if next_line.startswith("=") else 2
-                headings.append({"line": i, "level": level, "text": line.strip()})
+                headings.append({"line": i, "level": level, "text": stripped})
     return headings
 
 

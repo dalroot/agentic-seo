@@ -11,9 +11,12 @@ Agentic SEO equips coding assistants (Antigravity, Cursor, Claude Code, Windsurf
 - **Technical SEO**: Inspects robots.txt, XML sitemaps, redirects, HTTP security headers, and Core Web Vitals (LCP, CLS, INP).
 - **GitHub Repository SEO**: Audits repository metadata, topics, community health, and search rankings.
 
-## Key URLs
-- Live Website: https://dalroot.github.io/agentic-seo/
-- Persian Documentation: https://dalroot.github.io/agentic-seo/fa.html
-- Interactive Audit Dashboard: https://dalroot.github.io/agentic-seo/audit-report.html
-- GitHub Repository: https://github.com/dalroot/agentic-seo
-- Installation Script: https://raw.githubusercontent.com/dalroot/agentic-seo/main/install.sh
+## Key Links
+- [Live Documentation](https://dalroot.github.io/agentic-seo/): Complete guide, interactive quickstarts, and copyable prompts.
+- [Persian Documentation](https://dalroot.github.io/agentic-seo/fa.html): Full developer guide and tutorials in Persian (Farsi).
+- [Interactive Audit Dashboard](https://dalroot.github.io/agentic-seo/audit-report.html): Live visual SEO and GEO scorecard with category breakdown.
+- [Before / Baseline Case Study](https://dalroot.github.io/agentic-seo/case-study-before.html): Real-world pre-audit baseline demonstrating initial Grade D status.
+- [Official GitHub Repository](https://github.com/dalroot/agentic-seo): Source code, sub-skills, agent roles, and automated Python scripts.
+
+## Optional
+- [Full Knowledge Graph (llms-full.txt)](https://dalroot.github.io/agentic-seo/llms-full.txt): Complete reference of all 16 sub-skills, architecture, and 89 Python diagnostic scripts.

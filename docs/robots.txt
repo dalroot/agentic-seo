@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# AI Crawlers & Search Engines
+# AI Search & RAG Crawlers
 User-agent: GPTBot
 Allow: /
 
@@ -24,6 +24,15 @@ User-agent: Applebot-Extended
 Allow: /
 
 User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Amazonbot
 Allow: /
 
 Sitemap: https://dalroot.github.io/agentic-seo/sitemap.xml

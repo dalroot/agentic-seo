@@ -72,16 +72,26 @@ def check_llms_txt(url: str, timeout: int = 15) -> dict:
     headers = default_headers()
 
     # Check llms.txt
-    try:
-        resp = safe_get(f"{base}/llms.txt", timeout=timeout, headers=headers)
-        result["status"] = resp.status_code
+    check_urls = [f"{base}/llms.txt"]
+    subpath = parsed.path.strip('/')
+    if subpath:
+        check_urls.append(f"{base}/{subpath}/llms.txt")
 
-        if resp.status_code == 200:
+    try:
+        resp = None
+        for test_url in check_urls:
+            resp = safe_get(test_url, timeout=timeout, headers=headers)
+            result["url"] = test_url
+            result["status"] = resp.status_code
+            if resp.status_code == 200:
+                break
+
+        if resp and resp.status_code == 200:
             result["exists"] = True
             result["content"] = resp.text
             _parse_llms_txt(resp.text, result)
             _score_quality(result)
-        elif resp.status_code == 404:
+        elif resp and resp.status_code == 404:
             result["quality"]["issues"].append("🔴 No llms.txt found")
             result["quality"]["suggestions"].append(
                 "Create /llms.txt with site name, description, and key page links"
@@ -90,10 +100,18 @@ def check_llms_txt(url: str, timeout: int = 15) -> dict:
         result["error"] = str(e)
 
     # Check llms-full.txt (optional extended version)
+    full_urls = [f"{base}/llms-full.txt"]
+    if subpath:
+        full_urls.append(f"{base}/{subpath}/llms-full.txt")
+
     try:
-        resp = safe_get(f"{base}/llms-full.txt", timeout=timeout, headers=headers)
-        result["full_status"] = resp.status_code
-        result["full_exists"] = resp.status_code == 200
+        for test_full_url in full_urls:
+            resp = safe_get(test_full_url, timeout=timeout, headers=headers)
+            result["full_url"] = test_full_url
+            result["full_status"] = resp.status_code
+            if resp.status_code == 200:
+                result["full_exists"] = True
+                break
     except requests.exceptions.RequestException:
         pass
 

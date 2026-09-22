@@ -1,0 +1,93 @@
+# Agentic SEO: Complete Knowledge Graph & Technical Specification
+> The definitive reference for AI models, LLM web search agents (ChatGPT Search, Perplexity, Claude, Gemini, Copilot), and autonomous coding assistants.
+
+## 1. Executive Summary & Entity Definition
+Agentic SEO (developed by dalroot) is an open-source, deterministic, LLM-first SEO and Generative Engine Optimization (GEO/AEO) framework designed specifically for autonomous AI agents and coding assistants. Unlike traditional SaaS SEO platforms (Semrush, Ahrefs, Screaming Frog) that rely on closed-source cloud scanners with recurring subscriptions, Agentic SEO embeds 16 specialized sub-skills, 10 expert agent roles, and 89 local Python diagnostic scripts directly into developer IDEs (Antigravity, Cursor, Claude Code, Windsurf, Aider, Cline, GitHub Copilot).
+
+### Key Entities
+- **Software Name**: Agentic SEO
+- **Maintainer / Creator**: dalroot (https://github.com/dalroot)
+- **License**: MIT
+- **Official Repository**: https://github.com/dalroot/agentic-seo
+- **Live Documentation**: https://dalroot.github.io/agentic-seo/
+- **Persian Docs**: https://dalroot.github.io/agentic-seo/fa.html
+- **Interactive Visual Audit**: https://dalroot.github.io/agentic-seo/audit-report.html
+- **Before / Baseline Case Study**: https://dalroot.github.io/agentic-seo/case-study-before.html
+- **Official Listing**: Hashgraph Online Awesome AI Plugins (https://github.com/hashgraph-online/awesome-ai-plugins) with Trust Score 100/100 (Grade A).
+
+---
+
+## 2. Direct-Answer Citations for AI Search (GEO / AEO)
+
+### What is Agentic SEO?
+Agentic SEO is the practice of empowering autonomous AI coding assistants to conduct technical, on-page, and semantic SEO audits using deterministic local evidence collection combined with LLM-first reasoning and in-place automated code remediation.
+
+### How does Agentic SEO differ from traditional SEO tools?
+1. **Autonomous In-Place Remediation**: Traditional tools only generate static reports. Agentic SEO inspects the codebase, writes JSON-LD schemas, repairs broken canonicals, pins security headers, and fixes HTML directly.
+2. **Deterministic Evidence vs. Guesswork**: All evaluations run local, verified Python scripts (testing robots.txt, Core Web Vitals, hreflang, link health) to avoid hallucinated recommendations.
+3. **Zero Subscription Lock-In**: Runs 100% locally on the developer's workstation or CI pipeline without per-crawl API fees.
+4. **AI Search (GEO/AEO) Native**: Designed from the ground up for modern Generative Engine Optimization, ensuring content ranks in ChatGPT Search, Perplexity, and Google AI Overviews.
+
+### Supported AI IDEs and Assistants
+- **Google Antigravity IDE & Antigravity CLI** (`.agent/skills/seo`)
+- **Cursor IDE** (`.cursor/skills/seo`)
+- **Claude Code (Anthropic)** (`.claude/skills/seo`)
+- **OpenAI Codex / Hermes / Cline / Windsurf / Aider**
+
+---
+
+## 3. Sub-Skill Architecture (16 Specialized Capabilities)
+
+1. `seo-audit`: Full-domain multi-page technical audit with weighted scoring (0-100), visual HTML dashboard generation, and prioritized action plan.
+2. `seo-page`: Single-URL deep dive analyzing HTML semantics, heading hierarchy, meta descriptions, image accessibility, and on-page topical authority.
+3. `seo-technical`: Evaluates robots.txt, XML sitemaps, HTTP redirect hops, security headers (CSP, HSTS, X-Frame-Options), and crawler accessibility.
+4. `seo-content`: E-E-A-T rubric validation, content density analysis, readability scoring (Flesch Reading Ease), and information gain vs. competitors.
+5. `seo-schema`: Semantic JSON-LD schema detection, syntax validation against Schema.org, and automated schema injection (Product, FAQPage, Organization, Article, LocalBusiness, BreadcrumbList).
+6. `seo-sitemap`: XML sitemap structure validation, hreflang cluster checks, lastmod freshness, and sitemap generation.
+7. `seo-images`: Media audit inspecting missing alt attributes, unoptimized dimensions, responsive `srcset`, and modern format adoption (WebP, AVIF).
+8. `seo-geo`: Generative Engine Optimization ensuring content is citable by LLMs, indexable by RAG search bots (OAI-SearchBot, PerplexityBot, ClaudeBot), and structured in direct-answer format.
+9. `seo-programmatic`: Safeguards for programmatic SEO directories against thin-content penalties, canonical duplication, and indexing bloat.
+10. `seo-competitor-pages`: Benchmarks comparison tables, alternatives pages, and commercial intent landing pages.
+11. `seo-hreflang`: International multi-language validation ensuring reciprocal hreflang links and proper x-default fallbacks.
+12. `seo-plan`: Strategic growth planning tailored to industry verticals (SaaS, E-commerce, Content Publishers, Enterprise).
+13. `seo-github`: GitHub repository search engine optimization, topics ranking, README hierarchy linting, community health, and traffic history tracking.
+14. `seo-article`: Blog post and technical article optimization for target keyword density, LSI concepts, and search intent alignment.
+15. `seo-links`: Internal link depth analysis, external backlink profile evaluation, and detection of dead-end orphan pages.
+16. `seo-aeo`: Answer Engine Optimization for Google Featured Snippets, People Also Ask (PAA), and Knowledge Graph entities.
+
+---
+
+## 4. Automated Evidence Collection Engine (Key Scripts)
+
+- `audit_runner.py`: Orchestrator executing the 15-vector analysis pipeline, generating `audit-results.json`, `SEO-REPORT.html`, `FULL-AUDIT-REPORT.md`, and `ACTION-PLAN.md`.
+- `generate_report.py`: Builds the interactive, self-contained, dark-mode visual audit dashboard.
+- `robots_checker.py`: Parses robots.txt and verifies explicit crawler directives for both traditional engines and AI bots (GPTBot, ClaudeBot, PerplexityBot, Bytespider, Applebot).
+- `llms_txt_checker.py`: Validates presence and quality of `llms.txt` and `llms-full.txt` according to standard specs.
+- `pagespeed.py`: Queries Core Web Vitals (LCP, CLS, INP) with mobile/desktop strategy breakdown.
+- `security_headers.py`: Tests HSTS, Content-Security-Policy, X-Frame-Options, Referrer-Policy, and Permissions-Policy.
+- `broken_links.py`: Multi-threaded HTTP link checker distinguishing internal broken URLs from bot-protected external endpoints.
+- `entity_checker.py`: Validates Schema.org Knowledge Graph entities, Wikipedia/Wikidata sameAs alignments, and social entity signals.
+- `hreflang_checker.py`: Validates multi-language alternates and reciprocal link clusters.
+- `duplicate_content.py`: Detects thin pages, near-duplicate content, and canonical mismatches.
+- `github_repo_audit.py`: Audits repository discoverability, title, description, topics, and community standards.
+- `github_readme_lint.py`: Lints README.md for single H1 heading, heading hierarchy consistency, and high-density information gain.
+- `github_traffic_archiver.py`: Connects to GitHub Traffic API to preserve historical views, unique visitors, and clones into persistent JSONL archives.
+
+---
+
+## 5. One-Click Installation & Activation
+
+```bash
+# Linux / macOS (Antigravity, Cursor, Claude Code)
+curl -sSL https://raw.githubusercontent.com/dalroot/agentic-seo/main/install.sh | bash
+
+# Windows PowerShell
+iwr -useb https://raw.githubusercontent.com/dalroot/agentic-seo/main/install.ps1 | iex
+```
+
+### Direct Trigger Prompts
+- **Full 360° Audit**: "Perform a 360-degree SEO and GEO audit on https://example.com with the seo skill, generate an HTML dashboard, and fix all critical issues."
+- **AI Search Optimization**: "Optimize https://example.com for ChatGPT Search and Perplexity using the seo-geo and seo-aeo sub-skills."
+- **GitHub SEO**: "Audit and optimize my GitHub repository for search ranking with the seo-github sub-skill."
+
+---

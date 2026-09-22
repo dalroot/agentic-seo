@@ -56,10 +56,13 @@ def fetch_robots_txt(url: str, timeout: int = 15) -> dict:
         url = f"https://{url}"
         parsed = urlparse(url)
 
-    robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
+    subpath = parsed.path.strip('/')
+    robots_urls = [f"{parsed.scheme}://{parsed.netloc}/robots.txt"]
+    if subpath:
+        robots_urls.append(f"{parsed.scheme}://{parsed.netloc}/{subpath}/robots.txt")
 
     result = {
-        "url": robots_url,
+        "url": robots_urls[0],
         "status": None,
         "raw": None,
         "user_agents": {},
@@ -71,17 +74,22 @@ def fetch_robots_txt(url: str, timeout: int = 15) -> dict:
     }
 
     try:
-        resp = safe_get(robots_url, timeout=timeout, headers=default_headers())
-        result["status"] = resp.status_code
+        resp = None
+        for r_url in robots_urls:
+            resp = safe_get(r_url, timeout=timeout, headers=default_headers())
+            result["url"] = r_url
+            result["status"] = resp.status_code
+            if resp.status_code == 200:
+                break
 
-        if resp.status_code == 404:
+        if resp and resp.status_code == 404:
             result["issues"].append("🔴 No robots.txt found — all crawlers allowed by default")
             # Still check AI crawlers
             for crawler in AI_CRAWLERS:
                 result["ai_crawler_status"][crawler] = "allowed (no robots.txt)"
             return result
 
-        if resp.status_code != 200:
+        if resp and resp.status_code != 200:
             result["error"] = f"HTTP {resp.status_code}"
             return result
 
