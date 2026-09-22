@@ -9,15 +9,10 @@
 [![Python](https://img.shields.io/badge/Python-91%25-yellow?style=for-the-badge&logo=python)](https://github.com/dalroot/agentic-seo)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-> **The Ultimate, 3-in-1 SEO Skill for AI Agents** 🚀
+> **The Comprehensive SEO, Technical Audit, and GEO/AEO Ecosystem for AI Coding Assistants** 🚀
 </div>
 
-This repository merges three massive projects into one:
-1. 📝 **Native Markdown Skills**: 160+ native markdown skills for IDEs (Cursor/Claude).
-2. 🐍 **Advanced Python Ecosystem**: 88 Python scripts, 10 specialist agents, multi-IDE installers.
-3. ✨ **Interactive UI**: A glowing, OLED Glassmorphism [Live Dashboard](https://dalroot.github.io/agentic-seo).
-
-An LLM-first SEO analysis skill for agent IDEs and AI coding assistants, with 16 specialized sub-skills, 10 specialist agents, and 89 scripts used as evidence collectors and workflow automation.
+**Agentic SEO** is an LLM-first SEO engineering skill and automation toolkit for AI coding assistants and autonomous agents (Antigravity, Cursor, Claude Code, Windsurf). Instead of relying on generic AI guesswork, it equips agents with 16 specialized sub-skills, 10 specialist agents, and 89 automated Python scripts to audit, refactor, and optimize codebases based on deterministic evidence.
 
 For detailed installation guidance, example prompts, report generation, troubleshooting, and the full script inventory, see the **[Agentic SEO Skill Wiki](https://github.com/dalroot/agentic-seo/wiki)**.
 
