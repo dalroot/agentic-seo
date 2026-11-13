@@ -20,7 +20,7 @@ async function handleRequest(request) {
   }
 
   // Health endpoint
-  if (url.pathname === '/health' || url.pathname === '/') {
+  if (url.pathname === '/health') {
     return new Response(JSON.stringify({
       status: 'active',
       service: 'Agentic SEO Cloudflare Edge Engine',
@@ -29,7 +29,7 @@ async function handleRequest(request) {
       endpoints: {
         audit: '/api/audit?url=https://example.com',
         health: '/health',
-        webhook: '/webhook/github'
+        site: '/'
       },
       timestamp: new Date().toISOString()
     }, null, 2), {
@@ -184,5 +184,33 @@ async function handleRequest(request) {
     }
   }
 
-  return new Response('Not Found', { status: 404, headers: corsHeaders });
+  // Proxy Frontend Web Application from GitHub Pages
+  try {
+    const GITHUB_PAGES_ORIGIN = 'https://dalroot.github.io/agentic-seo';
+    let targetPath = url.pathname;
+    if (targetPath === '/' || targetPath === '') {
+      targetPath = '/index.html';
+    }
+    const upstreamUrl = `${GITHUB_PAGES_ORIGIN}${targetPath}`;
+    const upstreamRes = await fetch(upstreamUrl, {
+      headers: {
+        'User-Agent': request.headers.get('User-Agent') || 'Mozilla/5.0 AgenticSEO-Edge-Worker',
+        'Accept': request.headers.get('Accept') || '*/*'
+      }
+    });
+
+    const responseHeaders = new Headers(upstreamRes.headers);
+    for (const [k, v] of Object.entries(corsHeaders)) {
+      responseHeaders.set(k, v);
+    }
+    return new Response(upstreamRes.body, {
+      status: upstreamRes.status,
+      headers: responseHeaders
+    });
+  } catch (proxyErr) {
+    return new Response('Agentic SEO Edge Gateway Error: ' + proxyErr.message, {
+      status: 502,
+      headers: corsHeaders
+    });
+  }
 }
