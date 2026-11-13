@@ -17,6 +17,14 @@ function runPythonCli(args) {
   process.exit(result.status ?? 0);
 }
 
+// Radical simplicity: allow direct `agentic-seo <url>` or `npx agentic-seo <url>`
+const rawArgs = process.argv.slice(2);
+const knownCommands = new Set(['audit', 'gsc', 'repo', 'serve', 'search', 'init', '-h', '--help', '-v', '--version']);
+
+if (rawArgs.length > 0 && !knownCommands.has(rawArgs[0]) && !rawArgs[0].startsWith('-')) {
+  process.argv.splice(2, 0, 'audit');
+}
+
 program
   .name('agentic-seo')
   .description('Autonomous Technical SEO, GEO & Search Platform CLI')
@@ -24,7 +32,7 @@ program
 
 program
   .command('audit <url>')
-  .description('Run granular or 360° technical, GEO, schema, and speed audits')
+  .description('Run comprehensive 360° or targeted SEO audit (default)')
   .option('-t, --type <type>', 'Audit type: full, technical, geo, schema, speed', 'full')
   .option('-o, --output <dir>', 'Artifacts output directory')
   .option('--html <filename>', 'Custom HTML report file')
@@ -90,7 +98,11 @@ program
   .option('--ai <agent>', 'Specify AI agent (cursor, antigravity, claude)', 'antigravity')
   .action((options) => {
     console.log(`✨ Initializing Agentic SEO rules for ${options.ai}...`);
-    console.log('✅ Configuration verified. You can now run "agentic-seo audit <url>"');
+    console.log('✅ Configuration verified. You can now run "agentic-seo <url>"');
   });
 
-program.parse(process.argv);
+if (rawArgs.length === 0) {
+  program.help();
+} else {
+  program.parse(process.argv);
+}

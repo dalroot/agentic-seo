@@ -59,3 +59,12 @@ def test_write_text_output_creates_parent_directories(tmp_path):
 
     assert Path(written).is_file()
     assert output.read_text(encoding="utf-8") == "# Report\n"
+
+
+def test_generate_html_handles_missing_or_none_canonical():
+    data = load_report_data()
+    data["sections"]["onpage"]["canonical"] = None
+    scores = generate_report.calculate_overall_score(data)
+    html = generate_report.generate_html(data, scores)
+    assert "<!DOCTYPE html>" in html
+    assert "Canonical" in html

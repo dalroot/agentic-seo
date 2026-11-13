@@ -1,22 +1,22 @@
 {
-  "url": "https://dalroot.github.io/agentic-seo/",
+  "url": "https://example.com",
   "scores": {
-    "overall": 64,
+    "overall": 53,
     "categories": {
-      "security": 45,
-      "social": 77,
-      "robots": 96,
-      "article": 75,
-      "broken_links": 0,
-      "internal_links": 60,
+      "security": 25,
+      "social": 0,
+      "robots": 20,
+      "article": 50,
+      "broken_links": 100,
+      "internal_links": 80,
       "redirects": 100,
-      "llms_txt": 70,
+      "llms_txt": 0,
       "pagespeed": 0,
-      "onpage": 100,
-      "readability": 67,
+      "onpage": 65,
+      "readability": 69,
       "entity": 0,
-      "link_profile": 55,
-      "hreflang": 100,
+      "link_profile": 52,
+      "hreflang": 0,
       "duplicate_content": 100
     },
     "weights": {
@@ -38,113 +38,54 @@
     "scoring_version": 1
   },
   "data": {
-    "url": "https://dalroot.github.io/agentic-seo/",
-    "domain": "dalroot.github.io",
-    "timestamp": "2026-09-22T08:54:53.454268",
+    "url": "https://example.com",
+    "domain": "example.com",
+    "timestamp": "2026-11-13T23:52:46.336980",
     "sections": {
       "robots": {
-        "url": "https://dalroot.github.io/agentic-seo/robots.txt",
-        "status": 200,
-        "user_agents": {
-          "*": {
-            "allow": [
-              "/"
-            ],
-            "disallow": []
-          },
-          "GPTBot": {
-            "allow": [
-              "/"
-            ],
-            "disallow": []
-          },
-          "ChatGPT-User": {
-            "allow": [
-              "/"
-            ],
-            "disallow": []
-          },
-          "ClaudeBot": {
-            "allow": [
-              "/"
-            ],
-            "disallow": []
-          },
-          "anthropic-ai": {
-            "allow": [
-              "/"
-            ],
-            "disallow": []
-          },
-          "PerplexityBot": {
-            "allow": [
-              "/"
-            ],
-            "disallow": []
-          },
-          "Google-Extended": {
-            "allow": [
-              "/"
-            ],
-            "disallow": []
-          },
-          "Applebot-Extended": {
-            "allow": [
-              "/"
-            ],
-            "disallow": []
-          },
-          "CCBot": {
-            "allow": [
-              "/"
-            ],
-            "disallow": []
-          }
-        },
-        "sitemaps": [
-          "https://dalroot.github.io/agentic-seo/sitemap.xml"
-        ],
+        "url": "https://example.com/robots.txt",
+        "status": 404,
+        "user_agents": {},
+        "sitemaps": [],
         "crawl_delays": {},
         "ai_crawler_status": {
-          "GPTBot": "explicitly allowed",
-          "ChatGPT-User": "explicitly allowed",
-          "ClaudeBot": "explicitly allowed",
-          "PerplexityBot": "explicitly allowed",
-          "Google-Extended": "explicitly allowed",
-          "Applebot-Extended": "explicitly allowed",
-          "Bytespider": "not managed (inherits * rules)",
-          "CCBot": "explicitly allowed",
-          "anthropic-ai": "explicitly allowed",
-          "FacebookBot": "not managed (inherits * rules)",
-          "Amazonbot": "not managed (inherits * rules)"
+          "GPTBot": "not managed (allowed by default)",
+          "ChatGPT-User": "not managed (allowed by default)",
+          "ClaudeBot": "not managed (allowed by default)",
+          "PerplexityBot": "not managed (allowed by default)",
+          "Google-Extended": "not managed (allowed by default)",
+          "Applebot-Extended": "not managed (allowed by default)",
+          "Bytespider": "not managed (allowed by default)",
+          "CCBot": "not managed (allowed by default)",
+          "anthropic-ai": "not managed (allowed by default)",
+          "FacebookBot": "not managed (allowed by default)",
+          "Amazonbot": "not managed (allowed by default)"
         },
         "issues": [
-          "\u26a0\ufe0f 3 AI crawlers not explicitly managed: Bytespider, FacebookBot, Amazonbot"
+          "\u26a0\ufe0f 11 AI crawlers not explicitly managed: GPTBot, ChatGPT-User, ClaudeBot, PerplexityBot, Google-Extended",
+          "\u26a0\ufe0f No Sitemap directive found in robots.txt"
         ],
         "error": null
       },
       "security": {
-        "url": "https://dalroot.github.io/agentic-seo/",
-        "score": 45,
+        "url": "https://example.com",
+        "score": 25,
         "https": true,
-        "headers_present": {
-          "HSTS (Strict-Transport-Security)": "max-age=31556952"
-        },
+        "headers_present": {},
         "headers_missing": {
+          "HSTS (Strict-Transport-Security)": "Forces browsers to use HTTPS. Prevents downgrade attacks.",
           "Content-Security-Policy (CSP)": "Prevents XSS, clickjacking, and code injection.",
           "X-Frame-Options": "Prevents clickjacking by controlling iframe embedding.",
           "X-Content-Type-Options": "Prevents MIME-type sniffing.",
           "Referrer-Policy": "Controls how much referrer info is shared.",
           "Permissions-Policy": "Controls browser feature access (camera, microphone, geolocation)."
         },
-        "header_values": {
-          "strict-transport-security": "max-age=31556952"
-        },
+        "header_values": {},
         "issues": [
-          "\u26a0\ufe0f HSTS missing includeSubDomains directive",
-          "\ud83d\udd34 5 security headers missing \u2014 poor security posture"
+          "\ud83d\udd34 6 security headers missing \u2014 poor security posture"
         ],
         "recommendations": [
+          "HSTS (Strict-Transport-Security): Add header: Strict-Transport-Security: max-age=31536000; includeSubDomains",
           "Content-Security-Policy (CSP): Add a Content-Security-Policy header restricting script/style sources.",
           "X-Frame-Options: Add header: X-Frame-Options: SAMEORIGIN",
           "X-Content-Type-Options: Add header: X-Content-Type-Options: nosniff",
@@ -154,243 +95,126 @@
         "error": null
       },
       "social": {
-        "url": "https://dalroot.github.io/agentic-seo/",
-        "score": 77,
-        "og_tags": {
-          "og:type": "website",
-          "og:url": "https://dalroot.github.io/agentic-seo/",
-          "og:title": "Agentic SEO: The Ultimate AI SEO Skill for Agents",
-          "og:description": "Agentic SEO is the most powerful AI SEO Skill and AI Agent Skill to evolve large language models into Senior SEO Executives.",
-          "og:image": "https://dalroot.github.io/agentic-seo/og-image.jpg",
-          "og:site_name": "Agentic SEO"
-        },
-        "twitter_tags": {
-          "twitter:card": "summary_large_image",
-          "twitter:title": "Agentic SEO: The Ultimate AI SEO Skill for Agents",
-          "twitter:description": "Evolve large language models into Senior SEO Executives with 16 specialized sub-skills and 89 automated scripts.",
-          "twitter:image": "https://dalroot.github.io/agentic-seo/og-image.jpg"
-        },
-        "og_present": [
+        "url": "https://example.com",
+        "score": 0,
+        "og_tags": {},
+        "twitter_tags": {},
+        "og_present": [],
+        "og_missing": [
           "og:title",
           "og:description",
           "og:image",
           "og:url",
-          "og:type",
-          "og:site_name"
+          "og:type"
         ],
-        "og_missing": [],
-        "twitter_present": [
-          "twitter:card",
-          "twitter:title",
-          "twitter:description",
-          "twitter:image"
+        "twitter_present": [],
+        "twitter_missing": [
+          "twitter:card"
         ],
-        "twitter_missing": [],
-        "issues": [],
+        "issues": [
+          "\ud83d\udd34 Missing required: og:title",
+          "\ud83d\udd34 Missing required: og:description",
+          "\ud83d\udd34 Missing required: og:image",
+          "\ud83d\udd34 Missing required: og:url",
+          "\ud83d\udd34 Missing required: og:type",
+          "\u26a0\ufe0f Missing: twitter:card"
+        ],
         "recommendations": [
-          "Add og:image:width and og:image:height for optimal rendering (1200\u00d7630 recommended)"
+          "Add Open Graph tags for rich social media previews on Facebook, LinkedIn, etc.",
+          "Add Twitter Card tags for rich previews on X (Twitter)"
         ],
         "preview": {
-          "title": "Agentic SEO: The Ultimate AI SEO Skill for Agents",
-          "description": "Agentic SEO is the most powerful AI SEO Skill and AI Agent Skill to evolve large language models into Senior SEO Executives.",
-          "image": "https://dalroot.github.io/agentic-seo/og-image.jpg",
-          "site_name": "Agentic SEO"
+          "title": "Example Domain",
+          "description": null,
+          "image": null,
+          "site_name": ""
         },
         "error": null
       },
       "redirects": {
-        "url": "https://dalroot.github.io/agentic-seo/",
-        "final_url": "https://dalroot.github.io/agentic-seo/",
+        "url": "https://example.com",
+        "final_url": "https://example.com",
         "chain": [
           {
             "step": 1,
-            "url": "https://dalroot.github.io/agentic-seo/",
+            "url": "https://example.com",
             "status": 200,
-            "time_ms": 2667,
+            "time_ms": 2684,
             "final": true
           }
         ],
         "total_hops": 0,
-        "total_time_ms": 2667,
+        "total_time_ms": 2684,
         "has_loop": false,
         "has_mixed_protocol": false,
         "issues": [],
         "error": null
       },
       "llms_txt": {
-        "url": "https://dalroot.github.io/agentic-seo/llms.txt",
-        "full_url": "https://dalroot.github.io/agentic-seo/llms-full.txt",
-        "exists": true,
+        "url": "https://example.com/llms.txt",
+        "full_url": "https://example.com/llms-full.txt",
+        "exists": false,
         "full_exists": false,
-        "status": 200,
+        "status": 404,
         "full_status": 404,
         "parsed": {
-          "title": "Agentic SEO",
-          "description": "LLM-first SEO and AEO/GEO analysis skill for AI coding assistants and autonomous agents.",
-          "sections": [
-            {
-              "name": "Project Overview",
-              "links": []
-            },
-            {
-              "name": "Core Capabilities",
-              "links": []
-            },
-            {
-              "name": "Key URLs",
-              "links": []
-            }
-          ],
+          "title": null,
+          "description": null,
+          "sections": [],
           "links": []
         },
         "quality": {
-          "score": 70,
-          "issues": [
-            "\u26a0\ufe0f No links found"
-          ],
-          "suggestions": [
-            "Add key page links: - [Page Title](URL): Description"
-          ]
+          "score": 0,
+          "issues": [],
+          "suggestions": []
         },
         "error": null
       },
       "broken_links": {
-        "page_url": "https://dalroot.github.io/agentic-seo/",
-        "total_links": 8,
-        "checked": 8,
-        "broken": [
-          {
-            "url": "https://twitter.com/intent/tweet?text=Check%20out%20Agentic%20SEO%20-%20The%20Ultimate%20AI%20Skill%20for%20Developers!&url=https://github.com/dalroot/agentic-seo",
-            "anchor_text": "\ud835\udd4f",
-            "is_internal": false,
-            "status": 403,
-            "error": null,
-            "redirect": null,
-            "response_time_ms": 6148
-          },
-          {
-            "url": "https://t.me/share/url?url=https://github.com/dalroot/agentic-seo&text=Agentic%20SEO%20Skill",
-            "anchor_text": "\u2708\ufe0f",
-            "is_internal": false,
-            "status": null,
-            "error": "Blocked: URL resolves to private/internal IP (10.10.34.35)",
-            "redirect": null,
-            "response_time_ms": null
-          },
-          {
-            "url": "https://reddit.com/submit?url=https://github.com/dalroot/agentic-seo&title=Agentic%20SEO",
-            "anchor_text": "\ud83e\udd16",
-            "is_internal": false,
-            "status": 403,
-            "error": null,
-            "redirect": {
-              "from": "https://reddit.com/submit?url=https://github.com/dalroot/agentic-seo&title=Agentic%20SEO",
-              "to": "https://www.reddit.com/submit?url=https://github.com/dalroot/agentic-seo&title=Agentic%20SEO",
-              "hops": 1,
-              "codes": [
-                301
-              ]
-            },
-            "response_time_ms": 6690
-          }
-        ],
+        "page_url": "https://example.com",
+        "total_links": 0,
+        "checked": 0,
+        "broken": [],
         "redirected": [],
-        "timeout": [
-          {
-            "url": "https://dalroot.github.io/agentic-seo/fa.html",
-            "anchor_text": "\u0641\u0627\u0631\u0633\u06cc \ud83c\uddee\ud83c\uddf7",
-            "is_internal": true,
-            "status": null,
-            "error": "timeout",
-            "redirect": null,
-            "response_time_ms": null
-          },
-          {
-            "url": "https://dalroot.github.io/agentic-seo/audit-report.html",
-            "anchor_text": "\ud83d\udccaLive Audit Dashboard",
-            "is_internal": true,
-            "status": null,
-            "error": "timeout",
-            "redirect": null,
-            "response_time_ms": null
-          },
-          {
-            "url": "https://www.linkedin.com/sharing/share-offsite/?url=https://github.com/dalroot/agentic-seo",
-            "anchor_text": "in",
-            "is_internal": false,
-            "status": null,
-            "error": "timeout",
-            "redirect": null,
-            "response_time_ms": null
-          }
-        ],
-        "healthy": 2,
-        "summary": {
-          "total": 8,
-          "healthy": 2,
-          "broken": 3,
-          "redirected": 0,
-          "timeout": 3
-        },
+        "timeout": [],
+        "healthy": 0,
+        "summary": {},
         "issues": [
-          "\ud83d\udd34 3 broken link(s) found",
-          "\u26a0\ufe0f 3 link(s) timed out"
+          "\u26a0\ufe0f No links found on page"
         ],
         "error": null
       },
       "internal_links": {
-        "start_url": "https://dalroot.github.io/agentic-seo/",
-        "domain": "dalroot.github.io",
-        "pages_crawled": 3,
-        "total_internal_links": 2,
-        "unique_pages_found": 2,
-        "max_depth_reached": 1,
+        "start_url": "https://example.com",
+        "domain": "example.com",
+        "pages_crawled": 1,
+        "total_internal_links": 0,
+        "unique_pages_found": 0,
+        "max_depth_reached": 0,
         "pages": {
-          "https://dalroot.github.io/agentic-seo/": {
-            "outgoing_links": 2,
+          "https://example.com": {
+            "outgoing_links": 0,
             "incoming_links": 0
-          },
-          "https://dalroot.github.io/agentic-seo/fa.html": {
-            "outgoing_links": 0,
-            "incoming_links": 1
-          },
-          "https://dalroot.github.io/agentic-seo/audit-report.html": {
-            "outgoing_links": 0,
-            "incoming_links": 1
           }
         },
-        "anchor_texts": {
-          "\u0641\u0627\u0631\u0633\u06cc \ud83c\uddee\ud83c\uddf7": 1,
-          "\ud83d\udccaLive Audit Dashboard": 1
-        },
+        "anchor_texts": {},
         "link_distribution": {
           "min": 0,
-          "max": 2,
-          "avg": 1.0
+          "max": 0,
+          "avg": 0.0
         },
-        "orphan_candidates": [
-          {
-            "url": "https://dalroot.github.io/agentic-seo/fa.html",
-            "incoming_links": 1
-          },
-          {
-            "url": "https://dalroot.github.io/agentic-seo/audit-report.html",
-            "incoming_links": 1
-          }
-        ],
+        "orphan_candidates": [],
         "nofollow_links": [],
         "issues": [
-          "\u26a0\ufe0f 2 potential orphan page(s) (\u22641 internal link pointing to them)",
-          "\u26a0\ufe0f 2 page(s) have fewer than 3 internal links"
+          "\u26a0\ufe0f 1 page(s) have fewer than 3 internal links"
         ],
         "recommendations": [
-          "Add internal links pointing to orphan pages from related content",
           "Increase internal linking \u2014 aim for 3-5 relevant links per 1000 words"
         ],
         "error": null
       },
       "pagespeed": {
-        "url": "https://dalroot.github.io/agentic-seo/",
+        "url": "https://example.com",
         "strategy": "mobile",
         "performance_score": null,
         "metrics": {},
@@ -400,35 +224,11 @@
         "error": "Rate limited by Google API. Wait a few minutes or add an API key."
       },
       "entity": {
-        "url": "https://dalroot.github.io/agentic-seo/",
-        "entity_name": "Agentic SEO",
-        "entities_in_schema": [
-          {
-            "type": "Organization",
-            "name": "Agentic SEO",
-            "url": "https://dalroot.github.io/agentic-seo/",
-            "sameAs": [
-              "https://github.com/dalroot/agentic-seo",
-              "https://x.com/dalroot"
-            ],
-            "logo": "https://dalroot.github.io/agentic-seo/og-image.jpg",
-            "description": "",
-            "identifier": ""
-          }
-        ],
+        "url": "https://example.com",
+        "entity_name": "Example Domain",
+        "entities_in_schema": [],
         "sameas_analysis": {
-          "found": {
-            "GitHub": {
-              "url": "https://github.com/dalroot/agentic-seo",
-              "priority": "Medium",
-              "kg_signal": "Moderate"
-            },
-            "Twitter/X": {
-              "url": "https://x.com/dalroot",
-              "priority": "High",
-              "kg_signal": "Strong"
-            }
-          },
+          "found": {},
           "missing": {
             "Wikipedia": {
               "domain": "wikipedia.org",
@@ -444,20 +244,29 @@
               "domain": "linkedin.com",
               "priority": "High",
               "kg_signal": "Strong"
+            },
+            "Twitter/X": {
+              "domain": "x.com",
+              "priority": "High",
+              "kg_signal": "Strong"
             }
           },
           "issues": [],
-          "total_found": 2,
-          "total_missing_critical": 3
+          "total_found": 0,
+          "total_missing_critical": 4
         },
         "wikidata": {
-          "found": false,
-          "qid": null,
-          "url": null
+          "found": true,
+          "qid": "Q306656",
+          "label": "example.com",
+          "description": "domain name reserved for documentation purposes and as an example of the use of domain names",
+          "url": "https://www.wikidata.org/wiki/Q306656",
+          "confidence": "Medium"
         },
         "wikipedia": {
-          "found": false,
-          "url": null
+          "found": true,
+          "title": "Example.com",
+          "url": "https://en.wikipedia.org/wiki/Example.com"
         },
         "google_kg": {
           "checked": false,
@@ -467,25 +276,19 @@
         "nap_issues": [],
         "issues": [
           {
-            "severity": "Info",
-            "area": "Wikidata",
-            "finding": "No Wikidata entry found for 'Agentic SEO'.",
-            "fix": "If the entity meets Wikidata notability guidelines, create or improve an item with accurate third-party references. Do not create one solely for SEO."
+            "severity": "Critical",
+            "area": "Schema",
+            "finding": "No Organization/Person entity found in JSON-LD.",
+            "fix": "Add Organization or Person schema with name, url, logo, and sameAs properties."
           },
           {
-            "severity": "Info",
-            "area": "Wikipedia",
-            "finding": "No Wikipedia article found for 'Agentic SEO'.",
-            "fix": "Only pursue Wikipedia if the entity meets independent notability standards. Otherwise, strengthen official schema, sameAs profiles, citations, and About/Contact signals."
-          },
-          {
-            "severity": "Info",
+            "severity": "Warning",
             "area": "sameAs",
             "finding": "Missing sameAs link to Wikipedia (Primary KG signal).",
             "fix": "Add the existing official 'wikipedia.org' URL to sameAs; do not create this profile solely for SEO."
           },
           {
-            "severity": "Info",
+            "severity": "Warning",
             "area": "sameAs",
             "finding": "Missing sameAs link to Wikidata (Primary KG signal).",
             "fix": "Add the existing official 'wikidata.org' URL to sameAs; do not create this profile solely for SEO."
@@ -495,14 +298,20 @@
             "area": "sameAs",
             "finding": "Missing sameAs link to LinkedIn (Strong KG signal).",
             "fix": "Add 'linkedin.com' profile URL to sameAs array in your entity schema."
+          },
+          {
+            "severity": "Info",
+            "area": "sameAs",
+            "finding": "Missing sameAs link to Twitter/X (Strong KG signal).",
+            "fix": "Add 'x.com' profile URL to sameAs array in your entity schema."
           }
         ],
         "summary": {
-          "entities_found": 1,
-          "sameas_count": 2,
-          "sameas_missing_critical": 3,
-          "wikidata_found": false,
-          "wikipedia_found": false,
+          "entities_found": 0,
+          "sameas_count": 0,
+          "sameas_missing_critical": 4,
+          "wikidata_found": true,
+          "wikipedia_found": true,
           "google_kg_checked": false,
           "google_kg_found": false,
           "total_issues": 5
@@ -510,233 +319,115 @@
       },
       "link_profile": {
         "pages_crawled": 1,
-        "total_internal_links": 2,
-        "total_external_links": 6,
-        "unique_internal_targets": 2,
-        "unique_external_domains": 5,
-        "avg_internal_links_per_page": 2.0,
+        "total_internal_links": 0,
+        "total_external_links": 0,
+        "unique_internal_targets": 0,
+        "unique_external_domains": 0,
+        "avg_internal_links_per_page": 0.0,
         "orphan_pages": {
           "count": 0,
           "urls": []
         },
         "dead_end_pages": {
-          "count": 0,
-          "urls": []
+          "count": 1,
+          "urls": [
+            "https://example.com"
+          ]
         },
-        "top_linked_pages": [
-          {
-            "url": "https://dalroot.github.io/agentic-seo/fa.html",
-            "inbound_links": 1
-          },
-          {
-            "url": "https://dalroot.github.io/agentic-seo/audit-report.html",
-            "inbound_links": 1
-          }
-        ],
-        "top_external_domains": [
-          {
-            "domain": "github.com",
-            "links": 2
-          },
-          {
-            "domain": "twitter.com",
-            "links": 1
-          },
-          {
-            "domain": "www.linkedin.com",
-            "links": 1
-          },
-          {
-            "domain": "reddit.com",
-            "links": 1
-          },
-          {
-            "domain": "t.me",
-            "links": 1
-          }
-        ],
+        "top_linked_pages": [],
+        "top_external_domains": [],
         "issues": [
+          {
+            "type": "dead_end_pages",
+            "severity": "Medium",
+            "count": 1,
+            "finding": "1 page(s) with no outbound internal links (dead ends).",
+            "pages": [
+              "https://example.com"
+            ],
+            "fix": "Add contextual internal links to related content from these pages."
+          },
           {
             "type": "low_internal_linking",
             "severity": "High",
-            "finding": "Average internal links per page is only 2.0 (target: 5-10).",
+            "finding": "Average internal links per page is only 0.0 (target: 5-10).",
             "fix": "Increase internal linking by adding contextual links within content."
           }
         ],
-        "site_url": "https://dalroot.github.io/agentic-seo/"
+        "site_url": "https://example.com"
       },
       "hreflang": {
-        "url": "https://dalroot.github.io/agentic-seo/",
-        "implementation_method": "html_link_tags",
-        "hreflang_tags_found": 3,
-        "tags": [
-          {
-            "lang": "en",
-            "raw_lang": "en",
-            "url": "https://dalroot.github.io/agentic-seo/",
-            "raw_url": "https://dalroot.github.io/agentic-seo/"
-          },
-          {
-            "lang": "fa",
-            "raw_lang": "fa",
-            "url": "https://dalroot.github.io/agentic-seo/fa.html",
-            "raw_url": "https://dalroot.github.io/agentic-seo/fa.html"
-          },
-          {
-            "lang": "x-default",
-            "raw_lang": "x-default",
-            "url": "https://dalroot.github.io/agentic-seo/",
-            "raw_url": "https://dalroot.github.io/agentic-seo/"
-          }
-        ],
+        "url": "https://example.com/",
+        "implementation_method": "none",
+        "hreflang_tags_found": 0,
+        "tags": [],
         "sitemap": {
           "found": false,
-          "url": "https://dalroot.github.io/sitemap.xml",
+          "url": "https://example.com/sitemap.xml",
           "has_xhtml_namespace": false,
           "language_variants_found": [],
           "note": "No hreflang found in sitemap."
         },
         "checks": {
-          "self_reference": {
-            "passed": true,
-            "detail": "Self-referencing hreflang tag found."
-          },
-          "x_default": {
-            "passed": true,
-            "detail": "x-default present \u2192 https://dalroot.github.io/agentic-seo/"
-          },
-          "protocol_consistency": {
-            "passed": true,
-            "detail": "All hreflang URLs use: https"
-          },
-          "canonical_alignment": {
-            "passed": true,
-            "detail": "Canonical URL matches page URL: https://dalroot.github.io/agentic-seo/"
+          "hreflang_present": {
+            "passed": false,
+            "severity": "Info",
+            "finding": "No hreflang tags found (HTML, HTTP headers, or sitemap).",
+            "fix": "If this is a single-language site, hreflang is not needed. For multi-language sites, implement hreflang via HTML link tags or sitemap."
           }
         },
         "language_code_issues": [],
-        "return_tag_checks": [
-          {
-            "passed": null,
-            "severity": "Info",
-            "confidence": "Hypothesis",
-            "finding": "Found 1 alternate URL(s). Return tag verification requires --verify-returns flag.",
-            "fix": "Run with --verify-returns to fetch each alternate and confirm bidirectional hreflang.",
-            "alternates": [
-              "https://dalroot.github.io/agentic-seo/fa.html"
-            ]
-          }
-        ],
+        "return_tag_checks": [],
         "summary": {
           "critical": 0,
           "high": 0,
           "medium": 0,
           "low": 0,
-          "passed": 4
+          "passed": 0
         }
       },
       "duplicate_content": {
-        "pages_analyzed": 4,
-        "exact_duplicates": [
+        "pages_analyzed": 1,
+        "exact_duplicates": [],
+        "near_duplicates": [],
+        "thin_content": [
           {
-            "type": "exact_duplicate",
+            "type": "thin_content",
             "severity": "Critical",
-            "urls": [
-              "https://dalroot.github.io/agentic-seo/",
-              "https://dalroot.github.io/agentic-seo/index.html"
-            ],
-            "finding": "2 indexable pages have identical content.",
-            "fix": "Consolidate into a single canonical page and redirect duplicates with 301."
+            "url": "https://example.com",
+            "word_count": 25,
+            "threshold": 300,
+            "finding": "Only 25 words (minimum: 300).",
+            "fix": "Expand content to at least 300 words of substantive, unique content, or noindex if low-value."
           }
         ],
-        "near_duplicates": [],
-        "thin_content": [],
         "summary": {
-          "exact_duplicate_groups": 1,
+          "exact_duplicate_groups": 0,
           "near_duplicate_pairs": 0,
-          "thin_pages": 0,
-          "avg_word_count": 1102
+          "thin_pages": 1,
+          "avg_word_count": 25
         }
       },
       "onpage": {
-        "title": "Agentic SEO: The Ultimate AI SEO Skill for Agents",
-        "meta_description": "Agentic SEO is the most powerful AI SEO Skill and AI Agent Skill to evolve large language models into Senior SEO Executives.",
+        "title": "Example Domain",
+        "meta_description": null,
         "meta_robots": null,
         "x_robots_tag": null,
-        "canonical": "https://dalroot.github.io/agentic-seo/",
+        "canonical": null,
         "lang": "en",
-        "charset": "UTF-8",
-        "viewport": "width=device-width, initial-scale=1.0",
-        "favicon": null,
-        "h1": [
-          "Evolving AI Agentsinto SEO Executives."
-        ],
-        "h2": [
-          "Why Do You Need This Skill?",
-          "How to Install",
-          "\ud83c\udfaf Ready-to-Use Prompts (Click to Copy)",
-          "Frequently Asked Questions"
-        ],
-        "h3": [
-          "AI is Blind to SEO!",
-          "Automation Ecosystem",
-          "Eradicates Anti-Patterns",
-          "\ud83e\udd16 Agentic Setup (Recommended)",
-          "\ud83d\udcbb Manual Setup (For Devs)",
-          "\ud83c\udf1f 1. The 360\u00b0 Master Audit",
-          "\ud83d\uded2 2. E-Commerce SEO",
-          "\ud83d\udcf0 3. Blog Posts & E-E-A-T",
-          "\ud83e\udd16 4. GEO & AI Search"
-        ],
+        "charset": "utf-8",
+        "viewport": "width=device-width,initial-scale=1",
+        "favicon": "data:,",
+        "h1": [],
+        "h2": [],
+        "h3": [],
         "h4": [],
         "h5": [],
         "h6": [],
         "images": [],
         "links": {
-          "internal": [
-            {
-              "href": "https://dalroot.github.io/agentic-seo/fa.html",
-              "text": "\u0641\u0627\u0631\u0633\u06cc \ud83c\uddee\ud83c\uddf7",
-              "rel": []
-            },
-            {
-              "href": "https://dalroot.github.io/agentic-seo/audit-report.html",
-              "text": "\ud83d\udccaLive Audit Dashboard",
-              "rel": []
-            }
-          ],
-          "external": [
-            {
-              "href": "https://twitter.com/intent/tweet?text=Check%20out%20Agentic%20SEO%20-%20The%20Ultimate%20AI%20Skill%20for%20Developers!&url=https://github.com/dalroot/agentic-seo",
-              "text": "\ud835\udd4f",
-              "rel": []
-            },
-            {
-              "href": "https://www.linkedin.com/sharing/share-offsite/?url=https://github.com/dalroot/agentic-seo",
-              "text": "in",
-              "rel": []
-            },
-            {
-              "href": "https://reddit.com/submit?url=https://github.com/dalroot/agentic-seo&title=Agentic%20SEO",
-              "text": "\ud83e\udd16",
-              "rel": []
-            },
-            {
-              "href": "https://t.me/share/url?url=https://github.com/dalroot/agentic-seo&text=Agentic%20SEO%20Skill",
-              "text": "\u2708\ufe0f",
-              "rel": []
-            },
-            {
-              "href": "https://github.com/dalroot/agentic-seo",
-              "text": "\ud83d\udce6View Source on GitHub",
-              "rel": []
-            },
-            {
-              "href": "https://github.com/dalroot",
-              "text": "@dalroot",
-              "rel": []
-            }
-          ]
+          "internal": [],
+          "external": []
         },
         "pagination": {
           "prev": null,
@@ -744,478 +435,93 @@
         },
         "resource_hints": {
           "preload": [],
-          "preconnect": [
-            {
-              "href": "https://fonts.googleapis.com",
-              "as": null,
-              "type": null,
-              "crossorigin": null
-            },
-            {
-              "href": "https://fonts.gstatic.com",
-              "as": null,
-              "type": null,
-              "crossorigin": ""
-            }
-          ],
+          "preconnect": [],
           "dns-prefetch": [],
           "prefetch": [],
           "prerender": []
         },
-        "schema": [
-          {
-            "@type": "Unknown",
-            "@types": [
-              "Unknown"
-            ],
-            "@id": null,
-            "@context": "https://schema.org",
-            "status": "active",
-            "note": "",
-            "has_context": true,
-            "has_type": false,
-            "from_graph": false,
-            "raw": {
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "Organization",
-                  "@id": "https://dalroot.github.io/agentic-seo/#organization",
-                  "name": "Agentic SEO",
-                  "url": "https://dalroot.github.io/agentic-seo/",
-                  "logo": "https://dalroot.github.io/agentic-seo/og-image.jpg",
-                  "sameAs": [
-                    "https://github.com/dalroot/agentic-seo",
-                    "https://x.com/dalroot"
-                  ]
-                },
-                {
-                  "@type": "SoftwareApplication",
-                  "name": "Agentic SEO",
-                  "operatingSystem": "All (Cross-platform)",
-                  "applicationCategory": "DeveloperApplication",
-                  "offers": {
-                    "@type": "Offer",
-                    "price": "0",
-                    "priceCurrency": "USD"
-                  },
-                  "description": "LLM-first SEO analysis skill for AI coding assistants and autonomous agents.",
-                  "url": "https://dalroot.github.io/agentic-seo/",
-                  "author": {
-                    "@type": "Organization",
-                    "name": "dalroot",
-                    "url": "https://github.com/dalroot"
-                  }
-                },
-                {
-                  "@type": "FAQPage",
-                  "mainEntity": [
-                    {
-                      "@type": "Question",
-                      "name": "What exactly is this skill used for?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Normally, AI agents do not know the strict, up-to-date technical SEO principles. When you install this AI SEO Skill on your agent, it transforms into a Senior SEO Specialist that audits and optimizes your site autonomously."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "Which agents can this skill be installed on?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "This AI Agent Skill is platform-agnostic and runs natively on the most advanced coding agents, including Antigravity, Cursor, Claude Code, Aider, and Hermes."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "Does it work with Antigravity?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Yes! In fact, Antigravity is one of the best and most compatible platforms for executing the automated Python scripts in this ecosystem."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "What happens after installation?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "After installing the skill, the agent will present a brief summary of itself as your SEO Manager. You then provide your website link and it will automatically begin inspecting your code."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "Is this tool free to use?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Absolutely. It is 100% open-source and released under the MIT License."
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "@type": "Organization",
-            "@types": [
-              "Organization"
-            ],
-            "@id": "https://dalroot.github.io/agentic-seo/#organization",
-            "@context": "https://schema.org",
-            "status": "active",
-            "note": "",
-            "has_context": true,
-            "has_type": true,
-            "from_graph": true,
-            "raw": {
-              "@type": "Organization",
-              "@id": "https://dalroot.github.io/agentic-seo/#organization",
-              "name": "Agentic SEO",
-              "url": "https://dalroot.github.io/agentic-seo/",
-              "logo": "https://dalroot.github.io/agentic-seo/og-image.jpg",
-              "sameAs": [
-                "https://github.com/dalroot/agentic-seo",
-                "https://x.com/dalroot"
-              ]
-            }
-          },
-          {
-            "@type": "SoftwareApplication",
-            "@types": [
-              "SoftwareApplication"
-            ],
-            "@id": null,
-            "@context": "https://schema.org",
-            "status": "active",
-            "note": "",
-            "has_context": true,
-            "has_type": true,
-            "from_graph": true,
-            "raw": {
-              "@type": "SoftwareApplication",
-              "name": "Agentic SEO",
-              "operatingSystem": "All (Cross-platform)",
-              "applicationCategory": "DeveloperApplication",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD"
-              },
-              "description": "LLM-first SEO analysis skill for AI coding assistants and autonomous agents.",
-              "url": "https://dalroot.github.io/agentic-seo/",
-              "author": {
-                "@type": "Organization",
-                "name": "dalroot",
-                "url": "https://github.com/dalroot"
-              }
-            }
-          },
-          {
-            "@type": "FAQPage",
-            "@types": [
-              "FAQPage"
-            ],
-            "@id": null,
-            "@context": "https://schema.org",
-            "status": "restricted",
-            "note": "FAQPage is restricted to government/healthcare authority sites only.",
-            "has_context": true,
-            "has_type": true,
-            "from_graph": true,
-            "raw": {
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What exactly is this skill used for?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Normally, AI agents do not know the strict, up-to-date technical SEO principles. When you install this AI SEO Skill on your agent, it transforms into a Senior SEO Specialist that audits and optimizes your site autonomously."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Which agents can this skill be installed on?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "This AI Agent Skill is platform-agnostic and runs natively on the most advanced coding agents, including Antigravity, Cursor, Claude Code, Aider, and Hermes."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Does it work with Antigravity?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes! In fact, Antigravity is one of the best and most compatible platforms for executing the automated Python scripts in this ecosystem."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What happens after installation?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "After installing the skill, the agent will present a brief summary of itself as your SEO Manager. You then provide your website link and it will automatically begin inspecting your code."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Is this tool free to use?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Absolutely. It is 100% open-source and released under the MIT License."
-                  }
-                }
-              ]
-            }
-          }
-        ],
-        "open_graph": {
-          "og:type": "website",
-          "og:url": "https://dalroot.github.io/agentic-seo/",
-          "og:title": "Agentic SEO: The Ultimate AI SEO Skill for Agents",
-          "og:description": "Agentic SEO is the most powerful AI SEO Skill and AI Agent Skill to evolve large language models into Senior SEO Executives.",
-          "og:image": "https://dalroot.github.io/agentic-seo/og-image.jpg",
-          "og:site_name": "Agentic SEO"
-        },
-        "twitter_card": {
-          "twitter:card": "summary_large_image",
-          "twitter:title": "Agentic SEO: The Ultimate AI SEO Skill for Agents",
-          "twitter:description": "Evolve large language models into Senior SEO Executives with 16 specialized sub-skills and 89 automated scripts.",
-          "twitter:image": "https://dalroot.github.io/agentic-seo/og-image.jpg"
-        },
-        "word_count": 834,
-        "hreflang": [
-          {
-            "lang": "en",
-            "href": "https://dalroot.github.io/agentic-seo/"
-          },
-          {
-            "lang": "fa",
-            "href": "https://dalroot.github.io/agentic-seo/fa.html"
-          },
-          {
-            "lang": "x-default",
-            "href": "https://dalroot.github.io/agentic-seo/"
-          }
-        ]
+        "schema": [],
+        "open_graph": {},
+        "twitter_card": {},
+        "word_count": 27,
+        "hreflang": []
       },
       "readability": {
-        "word_count": 458,
-        "sentence_count": 26,
-        "paragraph_count": 18,
-        "syllable_count": 804,
-        "avg_sentence_length": 17.6,
-        "avg_paragraph_length": 1.4,
-        "avg_syllables_per_word": 1.76,
-        "flesch_reading_ease": 40.4,
-        "flesch_kincaid_grade": 12.0,
+        "word_count": 25,
+        "sentence_count": 2,
+        "paragraph_count": 1,
+        "syllable_count": 45,
+        "avg_sentence_length": 12.5,
+        "avg_paragraph_length": 2.0,
+        "avg_syllables_per_word": 1.8,
+        "flesch_reading_ease": 41.9,
+        "flesch_kincaid_grade": 10.5,
         "reading_level": "Difficult (9th-12th grade)",
-        "estimated_reading_time_min": 2.3,
-        "complex_words": 84,
-        "complex_word_pct": 18.3,
+        "estimated_reading_time_min": 0.1,
+        "complex_words": 5,
+        "complex_word_pct": 20.0,
         "issues": [
-          "\u2139\ufe0f Content readability is moderate (Flesch: 40.4) \u2014 suitable for educated audience"
+          "\u2139\ufe0f Content readability is moderate (Flesch: 41.9) \u2014 suitable for educated audience",
+          "\u26a0\ufe0f Thin content (25 words) \u2014 may rank poorly"
         ],
-        "recommendations": [
-          "Rewrite the flagged long sentences below using the suggested replacements."
-        ],
-        "sentence_rewrites": [
-          {
-            "current": "Analyze https://example.com/blog/seo-guide with the seo-article and seo-content sub-skills: Check readability score, E-E-A-T adherence, heading hierarchy, keyword cannibalization risk, and generate ready-to-use Article and FAQPage JSON-LD schema.",
-            "suggested": "Analyze https://example.com/blog/seo-guide with the seo-article and seo-content sub-skills: Check readability score, E-E-A-T. Adherence, heading hierarchy, keyword cannibalization risk, and generate ready-to-use Article and FAQPage JSON-LD schema..",
-            "current_word_count": 40,
-            "target_word_count": "15-20"
-          }
-        ]
+        "recommendations": [],
+        "sentence_rewrites": []
       },
       "article": {
-        "url": "https://dalroot.github.io/agentic-seo/",
+        "url": "https://example.com",
         "cms_detected": "generic",
-        "title": "Agentic SEO: The Ultimate AI SEO Skill for Agents",
-        "meta_description": "Agentic SEO is the most powerful AI SEO Skill and AI Agent Skill to evolve large language models into Senior SEO Executives.",
-        "og_description": "Agentic SEO is the most powerful AI SEO Skill and AI Agent Skill to evolve large language models into Senior SEO Executives.",
+        "title": "Example Domain",
+        "meta_description": "",
+        "og_description": "",
         "author": "",
         "publish_date": "",
         "labels": [],
         "headings": {
-          "h1": [
-            "Evolving AI Agentsinto SEO Executives."
-          ],
-          "h2": [
-            "Why Do You Need This Skill?",
-            "How to Install",
-            "\ud83c\udfaf Ready-to-Use Prompts (Click to Copy)",
-            "Frequently Asked Questions"
-          ],
-          "h3": [
-            "AI is Blind to SEO!",
-            "Automation Ecosystem",
-            "Eradicates Anti-Patterns",
-            "\ud83e\udd16 Agentic Setup (Recommended)",
-            "\ud83d\udcbb Manual Setup (For Devs)",
-            "\ud83c\udf1f 1. The 360\u00b0 Master Audit",
-            "\ud83d\uded2 2. E-Commerce SEO",
-            "\ud83d\udcf0 3. Blog Posts & E-E-A-T",
-            "\ud83e\udd16 4. GEO & AI Search"
-          ]
+          "h1": [],
+          "h2": [],
+          "h3": []
         },
         "paragraphs": [
-          "The most advanced AI SEO Skill that replaces AI guesswork with deterministic human-level reasoning. With this AI Agent Skill installed, your codebase is optimized autonomously.",
-          "By default, LLMs do not know the strict technical standards of SEO. This skill gives your AI agent the eyes of a Senior SEO Specialist, entirely replacing a human auditor.",
-          "Includes 89 Python scripts and 160+ Markdown skills for automated marketing, competitor analysis, Core Web Vitals checks, and E-E-A-T content generation.",
-          "Agents will no longer write dirty code. This skill actively prevents fatal errors like Canonical loops, conflicting tags, and deprecated schemas.",
-          "Open a new chat with your AI agent (like Antigravity or Cursor ). Copy the system prompt below and send it to the agent.",
-          "Once sent, the agent will automatically install the project, read its documentation, introduce itself, and wait for your target website to audit.",
-          "System Instructions: 1. Clone `https://github.com/dalroot/agentic-seo` into a suitable local directory. 2. Treat this repository as your core SEO and Marketing Skillset. 3. Read `SKILL.md` to fully understand your new capabilities. 4. Acknowledge successful installation by introducing yourself as the \"Agentic SEO Specialist\", list your key capabilities, and wait for my target URL or codebase to begin the audit. Do not take any further action until I provide the subject.",
-          "Install the CLI tool manually via your OS terminal:",
-          "Paste these prompts directly into your AI coding assistant (Antigravity, Cursor, Claude Code, Windsurf) to audit any website:",
-          "Complete end-to-end technical, content, schema, performance, and GEO audit for any website.",
-          "Run a comprehensive 360-degree SEO audit on https://example.com. Audit technical SEO (robots.txt, sitemaps, redirects, headers), Core Web Vitals, content quality & E-E-A-T, Schema.org JSON-LD, and GEO/AEO readiness. Generate audit-report.html, FULL-AUDIT-REPORT.md, and ACTION-PLAN.md.",
-          "Extract & validate Product, Review, and Offer schemas, image CLS, and CTR appeal.",
-          "Analyze this product page https://myshop.com/product/shoes for e-commerce SEO: Extract and validate Product, AggregateOffer, and Review schema. Audit product image alt text, lazy loading, and layout shifts (CLS), and generate optimized Product JSON-LD markup.",
-          "Deep article analysis, readability scoring, keyword cannibalization check, and Article schema.",
-          "Analyze https://example.com/blog/seo-guide with the seo-article and seo-content sub-skills: Check readability score, E-E-A-T adherence, heading hierarchy, keyword cannibalization risk, and generate ready-to-use Article and FAQPage JSON-LD schema.",
-          "Optimize for Google AI Overviews, ChatGPT Search, and Perplexity with llms.txt.",
-          "Audit https://example.com for Generative Engine Optimization (GEO): Verify AI bot access (GPTBot, ClaudeBot) in robots.txt, generate a standard llms.txt file, and optimize content blocks for direct answers in AI search engines.",
-          "Architected and Designed by @dalroot . An Open Source AI Marketing Project."
+          "This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes."
         ],
         "images": [],
-        "structured_data": [
-          {
-            "@type": "Unknown",
-            "@context": "https://schema.org",
-            "status": "active",
-            "note": "",
-            "has_context": true,
-            "has_type": false,
-            "raw": {
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "Organization",
-                  "@id": "https://dalroot.github.io/agentic-seo/#organization",
-                  "name": "Agentic SEO",
-                  "url": "https://dalroot.github.io/agentic-seo/",
-                  "logo": "https://dalroot.github.io/agentic-seo/og-image.jpg",
-                  "sameAs": [
-                    "https://github.com/dalroot/agentic-seo",
-                    "https://x.com/dalroot"
-                  ]
-                },
-                {
-                  "@type": "SoftwareApplication",
-                  "name": "Agentic SEO",
-                  "operatingSystem": "All (Cross-platform)",
-                  "applicationCategory": "DeveloperApplication",
-                  "offers": {
-                    "@type": "Offer",
-                    "price": "0",
-                    "priceCurrency": "USD"
-                  },
-                  "description": "LLM-first SEO analysis skill for AI coding assistants and autonomous agents.",
-                  "url": "https://dalroot.github.io/agentic-seo/",
-                  "author": {
-                    "@type": "Organization",
-                    "name": "dalroot",
-                    "url": "https://github.com/dalroot"
-                  }
-                },
-                {
-                  "@type": "FAQPage",
-                  "mainEntity": [
-                    {
-                      "@type": "Question",
-                      "name": "What exactly is this skill used for?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Normally, AI agents do not know the strict, up-to-date technical SEO principles. When you install this AI SEO Skill on your agent, it transforms into a Senior SEO Specialist that audits and optimizes your site autonomously."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "Which agents can this skill be installed on?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "This AI Agent Skill is platform-agnostic and runs natively on the most advanced coding agents, including Antigravity, Cursor, Claude Code, Aider, and Hermes."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "Does it work with Antigravity?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Yes! In fact, Antigravity is one of the best and most compatible platforms for executing the automated Python scripts in this ecosystem."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "What happens after installation?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "After installing the skill, the agent will present a brief summary of itself as your SEO Manager. You then provide your website link and it will automatically begin inspecting your code."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "Is this tool free to use?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Absolutely. It is 100% open-source and released under the MIT License."
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        ],
+        "structured_data": [],
         "readability": {
-          "flesch_reading_ease": 41.4,
-          "fkgl": 9.8,
+          "flesch_reading_ease": 41.9,
+          "fkgl": 10.5,
           "grade_label": "Difficult (technical / specialist audience)",
-          "word_count": 485,
-          "sentence_count": 53,
-          "avg_sentence_length": 9.2,
-          "avg_syllables_per_word": 1.85
+          "word_count": 25,
+          "sentence_count": 2,
+          "avg_sentence_length": 12.5,
+          "avg_syllables_per_word": 1.8
         },
-        "target_keyword": "https example com",
-        "extracted_keywords": [
-          "https example com",
-          "core web vitals",
-          "audit https example",
-          "extract validate product",
-          "commerce seo",
-          "seo skill",
-          "seo specialist",
-          "antigravity cursor",
-          "wait target",
-          "agentic seo",
-          "audit website",
-          "robots txt"
-        ],
-        "related_keywords": [
-          "https example com generated pdf link",
-          "https example com image1 jpg",
-          "https example com image png",
-          "https example com generated_file pdf",
-          "https example com placeholder_link",
-          "https example com download",
-          "https example com generated_file_link",
-          "https example com placeholder_link_to_pdf",
-          "https example com generated_pdf",
-          "https example com generated_document pdf",
-          "https example com converted_image jpg",
-          "https example com download placeholder",
-          "https example com placeholder",
-          "https example com download link",
-          "https example com generated_video mp4"
-        ],
+        "target_keyword": "",
+        "extracted_keywords": [],
+        "related_keywords": [],
         "seo_issues": [
           {
             "severity": "Warning",
+            "area": "Title",
+            "finding": "Title too short (14 chars).",
+            "fix": "Expand title to 50-60 characters with primary keyword near the start."
+          },
+          {
+            "severity": "Warning",
+            "area": "Meta Description",
+            "finding": "No meta description found.",
+            "fix": "Add a compelling 120-155 character meta description with a CTA."
+          },
+          {
+            "severity": "Critical",
+            "area": "H1",
+            "finding": "No H1 tag detected.",
+            "fix": "Add a single, descriptive H1 containing the primary keyword."
+          },
+          {
+            "severity": "Critical",
             "area": "Content",
-            "finding": "Content may be thin for a blog post (485 words).",
-            "fix": "Aim for 1,500+ words of substantive, unique content."
+            "finding": "Very thin content (25 words).",
+            "fix": "Expand content to at least 1,500 words for blog posts."
           },
           {
             "severity": "Warning",
@@ -1228,6 +534,12 @@
             "area": "Freshness",
             "finding": "No publish date detected in markup.",
             "fix": "Add visible publish/update date and datePublished in Article schema."
+          },
+          {
+            "severity": "Warning",
+            "area": "Schema",
+            "finding": "No JSON-LD structured data found.",
+            "fix": "Add Article/BlogPosting schema with author, datePublished, image, and publisher."
           }
         ]
       }
@@ -1244,15 +556,39 @@
     "environment_fixes": [
       {
         "severity": "critical",
-        "title": "5 security headers missing",
+        "title": "Missing H1 on page",
+        "reason": "No primary content heading was detected, which weakens topical clarity.",
+        "fix": "Ensure each page has exactly one descriptive H1 aligned to intent."
+      },
+      {
+        "severity": "warning",
+        "title": "Meta description is missing or out of range",
+        "reason": "This can reduce SERP CTR and snippet quality.",
+        "fix": "Update page templates to set complete title/meta/OG/Twitter tags."
+      },
+      {
+        "severity": "warning",
+        "title": "Title tag needs optimization",
+        "reason": "Title length/content is likely suboptimal for rankings and click-through.",
+        "fix": "Update page templates to set complete title/meta/OG/Twitter tags."
+      },
+      {
+        "severity": "critical",
+        "title": "6 security headers missing",
         "reason": "Missing headers reduce trust and can expose the site to browser/security risks.",
         "fix": "Set missing security headers at web server or CDN layer."
       },
       {
         "severity": "warning",
-        "title": "3 broken links detected",
-        "reason": "Broken internal links hurt crawl flow and user trust.",
-        "fix": "Repair or remove broken internal links and refresh outdated navigation targets."
+        "title": "No llms.txt found",
+        "reason": "AI crawlers and assistants have no curated machine-readable guidance for key pages.",
+        "fix": "Add `/llms.txt` at site root with concise site description and key URLs."
+      },
+      {
+        "severity": "warning",
+        "title": "Social meta tags are incomplete",
+        "reason": "Missing OG/Twitter tags weakens social previews and share quality.",
+        "fix": "Update page templates to set complete title/meta/OG/Twitter tags."
       },
       {
         "severity": "info",
@@ -1261,5 +597,6 @@
         "fix": "Set `PAGESPEED_API_KEY` in your environment or `.env` file (see `.env.example`), then rerun. The CLI also accepts `--api-key`. Prioritize LCP/INP/CLS fixes from that output."
       }
     ]
-  }
+  },
+  "artifacts": {}
 }

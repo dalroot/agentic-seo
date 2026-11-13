@@ -2,8 +2,11 @@
 """
 Agentic SEO Unified CLI.
 
-Provides single-entrypoint commands for:
-  - audit: Run granular or 360° technical, GEO, schema, and speed audits
+Provides radical simplicity with a single primary command:
+  agentic-seo <url>           (Instantly runs full 360° audit & produces executive summary)
+  agentic-seo audit <url>     (Explicit audit command with granular type options)
+
+Additional single-entrypoint commands:
   - gsc: Query and sync Google Search Console analytics and indexing data
   - repo: Audit GitHub repositories for SEO and developer discoverability
   - serve: Launch the cloud REST API and webhook server
@@ -17,9 +20,14 @@ import sys
 
 # Ensure repository root and scripts directory are in sys.path
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+SRC_DIR = os.path.join(BASE_DIR, "src")
 SCRIPTS_DIR = os.path.join(BASE_DIR, "scripts")
 if SCRIPTS_DIR not in sys.path:
     sys.path.insert(0, SCRIPTS_DIR)
+if SRC_DIR not in sys.path:
+    sys.path.insert(0, SRC_DIR)
+if BASE_DIR not in sys.path:
+    sys.path.insert(0, BASE_DIR)
 
 
 def run_script(script_name: str, args: list, cwd: str = BASE_DIR) -> int:
@@ -33,7 +41,14 @@ def run_script(script_name: str, args: list, cwd: str = BASE_DIR) -> int:
 
 
 def handle_audit(args):
-    url = args.url
+    from agentic_seo.audit import normalize_url, run_audit
+
+    try:
+        url = normalize_url(args.url)
+    except ValueError as e:
+        print(f"❌ Error: {e}", file=sys.stderr)
+        return 1
+
     audit_type = args.type.lower()
     output_dir = args.output or os.path.join(BASE_DIR, "docs", "reports")
     os.makedirs(output_dir, exist_ok=True)
@@ -41,15 +56,13 @@ def handle_audit(args):
     print(f"🚀 Starting Agentic SEO Audit: {url} [Mode: {audit_type.upper()}]")
 
     if audit_type == "full":
-        runner_args = [
-            url,
-            "--json", os.path.join(output_dir, "audit-results.json"),
-            "--markdown", os.path.join(output_dir, "FULL-AUDIT-REPORT.md"),
-            "--action-plan", os.path.join(output_dir, "ACTION-PLAN.md"),
-        ]
-        if args.html:
-            runner_args.extend(["--html", os.path.join(output_dir, args.html)])
-        return run_script("audit_runner.py", runner_args)
+        try:
+            result = run_audit(url, output_dir=output_dir, html_name=args.html, write_artifacts=True)
+            print("\n" + result["summary_text"])
+            return 0
+        except Exception as e:
+            print(f"❌ Audit execution failed: {e}", file=sys.stderr)
+            return 1
 
     elif audit_type == "technical":
         print("  ▶ Running technical diagnostics (Robots, Security, Redirects, Canonical, Broken Links)...")
@@ -101,7 +114,8 @@ def handle_repo(args):
     repo = args.repo
     print(f"🔍 Running GitHub Repository SEO & Discoverability Audit for: {repo}")
     lint_ret = run_script("github_readme_lint.py", ["README.md"])
-    topics_ret = run_script("repo_topic_suggester.py", ["."])
+    topics_args = ["--path", repo] if os.path.isdir(repo) else ["--repo", repo]
+    topics_ret = run_script("repo_topic_suggester.py", topics_args)
     return lint_ret or topics_ret
 
 
@@ -132,21 +146,26 @@ def handle_search(args):
     return 0
 
 
-def main():
+def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="agentic-seo",
-        description="Agentic SEO — Autonomous Technical Audit, GEO & Search Platform",
+        description="Agentic SEO — Autonomous 360° Technical Audit, GEO & Search Platform",
+        epilog="Effortless execution:\n  agentic-seo https://example.com\n  agentic-seo audit https://example.com\n",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
     )
-    subparsers = parser.add_subparsers(dest="command", required=True)
+    subparsers = parser.add_subparsers(dest="command", required=False)
 
     # Subcommand: audit
-    p_audit = subparsers.add_parser("audit", help="Run comprehensive or targeted SEO audits")
-    p_audit.add_argument("url", help="Target URL to audit")
+    p_audit = subparsers.add_parser(
+        "audit",
+        help="Run comprehensive 360° or targeted SEO audit (default)",
+    )
+    p_audit.add_argument("url", help="Target URL or domain to audit (e.g. https://example.com)")
     p_audit.add_argument(
         "--type",
         choices=["full", "technical", "geo", "schema", "speed"],
         default="full",
-        help="Audit category (default: full 360°)",
+        help="Audit category (default: full 360° audit)",
     )
     p_audit.add_argument("--output", help="Directory to save audit artifacts (default: docs/reports)")
     p_audit.add_argument("--html", help="Custom HTML report filename")
@@ -180,7 +199,32 @@ def main():
     p_search.add_argument("--anti-patterns", action="store_true", help="List anti-patterns")
     p_search.set_defaults(func=handle_search)
 
-    args = parser.parse_args()
+    return parser
+
+
+def main(argv=None):
+    if argv is None:
+        argv = sys.argv[1:]
+
+    # Effortless entrypoint: if no arguments provided, display help
+    if not argv:
+        parser = build_parser()
+        parser.print_help()
+        return 0
+
+    # Effortless entrypoint: if the first argument is not a known subcommand or flag,
+    # treat it as a target URL for an instant 360° audit!
+    known_commands = {"audit", "gsc", "repo", "serve", "search", "-h", "--help", "-v", "--version"}
+    if argv[0] not in known_commands and not argv[0].startswith("-"):
+        argv = ["audit"] + argv
+
+    parser = build_parser()
+    args = parser.parse_args(argv)
+
+    if not hasattr(args, "func"):
+        parser.print_help()
+        return 0
+
     return args.func(args)
 
 

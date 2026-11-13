@@ -74,10 +74,15 @@ def main():
         written.append(("Full audit report", write_text_output(args.markdown, render_markdown_report(data, scores, scoring_config))))
         written.append(("Action plan", write_text_output(args.action_plan, render_action_plan(data, scores))))
 
-    print("\nAudit artifacts:")
-    for label, path in written:
-        print(f"   {label}: {path}")
-    print(f"   Overall Score: {scores['overall']}/100")
+    payload["artifacts"] = {label: path for label, path in written}
+    try:
+        from agentic_seo.audit import format_executive_summary
+        print("\n" + format_executive_summary(payload))
+    except Exception:
+        print("\nAudit artifacts:")
+        for label, path in written:
+            print(f"   {label}: {path}")
+        print(f"   Overall Score: {scores['overall']}/100")
 
 
 if __name__ == "__main__":

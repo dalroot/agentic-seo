@@ -1537,7 +1537,7 @@ tr:hover td {{ background: rgba(99,102,241,0.03); }}
                     <tr><td>Title</td><td>{(op.get('title','') or '—')[:70]}</td><td>{len(op.get('title','') or '')}</td></tr>
                     <tr><td>Meta Description</td><td>{(op.get('meta_description','') or '—')[:100]}</td><td>{len(op.get('meta_description','') or '')}</td></tr>
                     <tr><td>H1</td><td>{(op.get('h1',[''])[0] if isinstance(op.get('h1'), list) and op.get('h1') else op.get('h1','') or '—')[:70]}</td><td>—</td></tr>
-                    <tr><td>Canonical</td><td class="link-url">{op.get('canonical','—')[:80]}</td><td>—</td></tr>
+                    <tr><td>Canonical</td><td class="link-url">{(op.get('canonical') or '—')[:80]}</td><td>—</td></tr>
                 </tbody>
             </table>
             {render_recommendations(op)}

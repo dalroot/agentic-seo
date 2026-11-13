@@ -21,11 +21,16 @@ try:
 except ImportError:
     HAS_FASTAPI = False
 
-# Ensure scripts directory is available
+# Ensure scripts and src directory are available
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+SRC_DIR = os.path.join(BASE_DIR, "src")
 SCRIPTS_DIR = os.path.join(BASE_DIR, "scripts")
 if SCRIPTS_DIR not in sys.path:
     sys.path.insert(0, SCRIPTS_DIR)
+if SRC_DIR not in sys.path:
+    sys.path.insert(0, SRC_DIR)
+if BASE_DIR not in sys.path:
+    sys.path.insert(0, BASE_DIR)
 
 
 if HAS_FASTAPI:
@@ -81,18 +86,17 @@ if HAS_FASTAPI:
     async def trigger_audit(req: AuditRequest):
         """Trigger an on-demand audit for a given target URL."""
         try:
-            from generate_report import calculate_overall_score, collect_data, load_scoring_config
-            scoring_config = load_scoring_config()
-            data = collect_data(req.url)
-            scores = calculate_overall_score(data, scoring_config=scoring_config)
-
+            from agentic_seo.audit import run_audit
+            res = run_audit(req.url, write_artifacts=bool(req.save_artifacts))
             return {
-                "url": req.url,
-                "audit_type": req.audit_type,
-                "timestamp": datetime.utcnow().isoformat(),
-                "overall_score": scores.get("overall", 0),
-                "breakdown": scores,
-                "environment": data.get("environment", {}),
+                "url": res["url"],
+                "audit_type": req.audit_type or "full",
+                "timestamp": res["data"].get("timestamp") or datetime.utcnow().isoformat(),
+                "overall_score": res["scores"].get("overall", 0),
+                "breakdown": res["scores"],
+                "environment": res["data"].get("environment", {}),
+                "summary": res.get("summary_text", ""),
+                "artifacts": res.get("artifacts", {}),
             }
         except Exception as e:
             raise HTTPException(status_code=500, detail=f"Audit failed: {str(e)}")
