@@ -1,20 +1,67 @@
 <div align="center">
 
-# 🤖 Agentic SEO Skill
+# 🤖 Agentic SEO
 
 **[🇮🇷 فارسی (Persian)](README.fa.md) | [🇺🇸 English](README.md)**
 
 [![Release](https://img.shields.io/github/v/release/dalroot/agentic-seo?style=for-the-badge&color=blue)](https://github.com/dalroot/agentic-seo/releases)
 [![GitHub Pages](https://img.shields.io/github/actions/workflow/status/dalroot/agentic-seo/deploy-pages.yml?branch=master&label=Live%20Site&style=for-the-badge&color=success)](https://dalroot.github.io/agentic-seo)
-[![Python](https://img.shields.io/badge/Python-91%25-yellow?style=for-the-badge&logo=python)](https://github.com/dalroot/agentic-seo)
+[![Deploy to DigitalOcean](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/dalroot/agentic-seo/tree/master)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-yellow?style=for-the-badge&logo=python)](https://github.com/dalroot/agentic-seo)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-> **The Comprehensive SEO, Technical Audit, and GEO/AEO Ecosystem for AI Coding Assistants** 🚀
+> **The Autonomous SEO, Technical Audit, GEO/AEO & Search Console Engine for Modern Dev Teams** 🚀
 </div>
 
-**Agentic SEO** is an LLM-first SEO engineering skill and automation toolkit for AI coding assistants and autonomous agents (Antigravity, Cursor, Claude Code, Windsurf). Instead of relying on generic AI guesswork, it equips agents with 16 specialized sub-skills, 10 specialist agents, and 89 automated Python scripts to audit, refactor, and optimize codebases based on deterministic evidence.
+**Agentic SEO** is an LLM-first SEO engineering platform, CLI, and automation toolkit for development teams and AI coding assistants (Antigravity, Cursor, Claude Code, Windsurf). Instead of relying on generic AI guesswork, it equips teams and agents with deterministic audits, granular category testing, Google Search Console synchronization, and self-hosted cloud API orchestration.
 
 For detailed installation guidance, example prompts, report generation, troubleshooting, and the full script inventory, see the **[Agentic SEO Skill Wiki](https://github.com/dalroot/agentic-seo/wiki)**.
+
+## ⚡ Quick Start: Unified CLI
+
+Run granular or 360° audits, sync Google Search Console, or launch the self-hosted cloud engine with a single command:
+
+```bash
+# 1. Comprehensive 360° Audit
+agentic-seo audit https://example.com --type full
+
+# 2. Targeted Technical, GEO, Schema, or Speed Audits
+agentic-seo audit https://example.com --type technical   # Robots, Security, Broken Links, Redirects
+agentic-seo audit https://example.com --type geo         # LLMs.txt, AI bot policies, Answer blocks
+agentic-seo audit https://example.com --type schema      # JSON-LD & Structured Data validation
+agentic-seo audit https://example.com --type speed       # Core Web Vitals & PageSpeed Insights
+
+# 3. Google Search Console Analytics & Indexing Sync
+agentic-seo gsc https://example.com --days 28 --credentials service_account.json
+
+# 4. GitHub Repository SEO & Discoverability
+agentic-seo repo dalroot/agentic-seo
+
+# 5. Launch Cloud REST API & Webhook Server
+agentic-seo serve --port 8000
+```
+
+## ☁️ Cloud & Self-Hosted Architecture
+
+Agentic SEO is architected for both local agentic workflows and 24/7 cloud orchestration:
+
+[![Deploy to DigitalOcean](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/dalroot/agentic-seo/tree/master)
+
+```text
+[ GitHub CI/CD / Edge (Cloudflare) ]
+               │
+               ▼
+   [ Agentic SEO Cloud Engine (FastAPI on DigitalOcean Droplet / App Platform) ]
+               │
+       ┌───────┴───────────────────────┐
+       ▼                               ▼
+[ Headless Background Crawlers ]   [ Google Search Console API Sync ]
+(Continuous 360° Audits)          (Keyword Drop & Crawl Error Remediation)
+```
+
+- **GitHub Webhook Ingestion (`/webhook/github`):** Automatically trigger audits on every commit or PR.
+- **Continuous Google Search Console Sync (`/api/v1/gsc/sync`):** Monitor ranking anomalies and dispatch AI repair patches.
+- **Docker & DigitalOcean Native:** Fully configurable with `docker-compose.yml` and `.do/app.yaml`.
 
 ## 💻 IDE Compatibility
 

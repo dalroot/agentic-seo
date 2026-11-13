@@ -1,20 +1,83 @@
 <div align="center">
 
-# 🤖 مهارت سئوی ایجنتیک (Agentic SEO Skill)
+# 🤖 پلتفرم سئوی ایجنتیک (Agentic SEO)
 
 **[🇮🇷 فارسی (Persian)](README.fa.md) | [🇺🇸 English](README.md)**
 
 [![Release](https://img.shields.io/github/v/release/dalroot/agentic-seo?style=for-the-badge&color=blue)](https://github.com/dalroot/agentic-seo/releases)
 [![GitHub Pages](https://img.shields.io/github/actions/workflow/status/dalroot/agentic-seo/deploy-pages.yml?branch=master&label=Live%20Site&style=for-the-badge&color=success)](https://dalroot.github.io/agentic-seo)
-[![Python](https://img.shields.io/badge/Python-91%25-yellow?style=for-the-badge&logo=python)](https://github.com/dalroot/agentic-seo)
+[![Deploy to DigitalOcean](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/dalroot/agentic-seo/tree/master)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-yellow?style=for-the-badge&logo=python)](https://github.com/dalroot/agentic-seo)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
-> **اکوسیستم جامع سئو، بهینه‌سازی فنی و موتورهای هوش مصنوعی (GEO & AEO) ویژه دستیاران و ایجنت‌های کدنویسی** 🚀
+> **موتور خودکار ممیزی فنی، GEO، اتصال به گوگل سرچ کنسول و بهینه‌سازی کدهای وب ویژه تیم‌های مهندسی و ایجنت‌های هوش مصنوعی** 🚀
 </div>
 
 <div dir="rtl">
 
-**Agentic SEO** یک مهارت استاندارد و جعبه‌ابزار مهندسی برای دستیاران کدنویسی و ایجنت‌های هوش مصنوعی (نظیر Antigravity، Cursor، Claude Code و Windsurf) است. این پروژه به جای حدس‌وگمان‌های رایج هوش مصنوعی، با بهره‌گیری از ۸۹ اسکریپت خودکار پایتون و ۱۶ زیر‌مهارت تخصصی، فرآیند ممیزی، عیب‌یابی و بهینه‌سازی کدهای سئو را بر پایه داده‌های واقعی و بدون خطا (Deterministic & Evidence-Based) روی محیط لوکال اجرا می‌کند.
+**Agentic SEO** یک پلتفرم جامع مهندسی، واسط خط‌فرمان (CLI) و جعبه‌ابزار ابری برای تیم‌های توسعه و ایجنت‌های هوش مصنوعی (نظیر Antigravity، Cursor، Claude Code و Windsurf) است. این پلتفرم با ممیزی‌های دقیق و داده‌محور، دسته‌بندی ممیزی‌های تخصصی، همگام‌سازی مداوم با سرچ کنسول گوگل و سرور ابری اختصاصی، فرآیند ممیزی و سئو را خودکارسازی می‌کند.
+
+---
+
+## ⚡ شروع سریع با CLI یکپارچه
+
+اجرای ممیزی‌های ۳۶۰ درجه یا تخصصی، اتصال به سرچ کنسول گوگل و روشن کردن سرور ابری با یک دستور ساده:
+
+<div dir="ltr">
+
+```bash
+# ۱. ممیزی جامع ۳۶۰ درجه
+agentic-seo audit https://example.com --type full
+
+# ۲. ممیزی‌های تفکیک‌شده و هدفمند
+agentic-seo audit https://example.com --type technical   # فایل‌های Robots، امنیت، لینک‌های شکسته و ریدایرکت
+agentic-seo audit https://example.com --type geo         # فایل LLMs.txt، سیاست‌های ربات‌های هوش مصنوعی و بلوک‌های پاسخ
+agentic-seo audit https://example.com --type schema      # اعتبارسنجی کدهای اسکیما و داده‌های ساختاریافته
+agentic-seo audit https://example.com --type speed       # هسته حیاتی وب (Core Web Vitals) و سرعت صفحات
+
+# ۳. همگام‌سازی و تحلیل داده‌های سرچ کنسول گوگل (GSC)
+agentic-seo gsc https://example.com --days 28 --credentials service_account.json
+
+# ۴. ممیزی سئو و خوانایی ریپازیتوری‌های گیت‌هاب
+agentic-seo repo dalroot/agentic-seo
+
+# ۵. اجرای سرور ابری، REST API و وب‌هوک
+agentic-seo serve --port 8000
+```
+
+</div>
+
+---
+
+## ☁️ معماری ابری و خودکارسازی سرور (Cloud Architecture)
+
+پلتفرم Agentic SEO هم به عنوان مهارت لوکال و هم به عنوان یک موتور ابری دائم‌کار روی سرور و کانتینر عمل می‌کند:
+
+<div align="center">
+
+[![Deploy to DigitalOcean](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/dalroot/agentic-seo/tree/master)
+
+</div>
+
+<div dir="ltr">
+
+```text
+[ لایه کلاینت / لبه شبکه (Cloudflare Edge) / گیت‌هاب ]
+                         │
+                         ▼
+   [ سرور ابری Agentic SEO (FastAPI روی DigitalOcean Droplet / App Platform) ]
+                         │
+         ┌───────────────┴───────────────────────┐
+         ▼                                       ▼
+  [ ورکرهای خزشگر ابری ]                [ همگام‌ساز خودکار سرچ کنسول ]
+  (اجرای مداوم ممیزی‌های ۳۶۰ درجه)     (پایش افت رتبه‌ها و ارسال PR اصلاحی)
+```
+
+</div>
+
+* **دریافت وب‌هوک‌های گیت‌هاب (`/webhook/github`):** اجرای خودکار تست‌های سئو در هر Commit یا Pull Request.
+* **همگام‌سازی پیوسته با Google Search Console (`/api/v1/gsc/sync`):** شناسایی افت ایمپرشن و ارسال پچ‌های اصلاحی به کدبیس.
+* **سازگاری کامل با Docker و DigitalOcean:** دارای فایل‌های رسمی `docker-compose.yml` و `.do/app.yaml`.
 
 ---
 

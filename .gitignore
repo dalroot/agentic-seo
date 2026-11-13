@@ -41,6 +41,10 @@ ChatExport_*/
 .DS_Store
 Thumbs.db
 
+# Node
+node_modules/
+npm-debug.log*
+
 # Root temp audit outputs (docs/audit-report.html is preserved for GitHub Pages)
 /audit-results.json
 /audit-report.html

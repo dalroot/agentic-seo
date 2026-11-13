@@ -3,9 +3,9 @@ requires = ["setuptools>=69"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "agentic-seo-skill"
-version = "3.0.1"
-description = "Deterministic SEO audit scripts and report generation for Agentic SEO workflows."
+name = "agentic-seo"
+version = "2.0.0"
+description = "Autonomous Technical SEO, GEO & Google Search Console Auditing Platform"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
@@ -15,10 +15,18 @@ dependencies = [
   "requests>=2.31",
 ]
 
+[project.scripts]
+agentic-seo = "agentic_seo.cli:main"
+
 [project.optional-dependencies]
 dev = [
   "pytest>=8.0",
   "ruff>=0.5",
+]
+server = [
+  "fastapi>=0.110.0",
+  "uvicorn>=0.28.0",
+  "pydantic>=2.0",
 ]
 gsc = [
   "google-api-python-client>=2.125",
@@ -28,19 +36,22 @@ visual = [
   "playwright>=1.44",
 ]
 all = [
-  "pytest>=8.0",
-  "ruff>=0.5",
+  "fastapi>=0.110.0",
+  "uvicorn>=0.28.0",
+  "pydantic>=2.0",
   "google-api-python-client>=2.125",
   "google-auth>=2.29",
   "playwright>=1.44",
+  "pytest>=8.0",
+  "ruff>=0.5",
 ]
 
-[tool.setuptools]
-py-modules = []
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["scripts"]
+pythonpath = ["scripts", "src"]
 
 [tool.ruff]
 line-length = 120
