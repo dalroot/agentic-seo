@@ -7,6 +7,7 @@
 [![Release](https://img.shields.io/github/v/release/dalroot/agentic-seo?style=for-the-badge&color=blue)](https://github.com/dalroot/agentic-seo/releases)
 [![GitHub Pages](https://img.shields.io/github/actions/workflow/status/dalroot/agentic-seo/deploy-pages.yml?branch=master&label=Live%20Site&style=for-the-badge&color=success)](https://dalroot.github.io/agentic-seo)
 [![Deploy to DigitalOcean](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/dalroot/agentic-seo/tree/master)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/dalroot/agentic-seo)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-yellow?style=for-the-badge&logo=python)](https://github.com/dalroot/agentic-seo)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
@@ -41,17 +42,25 @@ agentic-seo repo dalroot/agentic-seo
 agentic-seo serve --port 8000
 ```
 
-## ☁️ Cloud & Self-Hosted Architecture
+## ☁️ Cloud & Edge Architecture (Hybrid Deployment)
 
-Agentic SEO is architected for both local agentic workflows and 24/7 cloud orchestration:
+Agentic SEO uses an enterprise-ready **Hybrid Multi-Cloud Architecture** combining Edge speed with Cloud compute:
 
+<div align="center">
+
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/dalroot/agentic-seo) &nbsp;&nbsp;
 [![Deploy to DigitalOcean](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/dalroot/agentic-seo/tree/master)
 
+</div>
+
 ```text
-[ GitHub CI/CD / Edge (Cloudflare) ]
+[ Global Users & Webhook Events ]
                │
                ▼
-   [ Agentic SEO Cloud Engine (FastAPI on DigitalOcean Droplet / App Platform) ]
+   [ Cloudflare Pages & Edge Functions ] ──► (Instant Dashboard & Webhook Ingestion)
+               │
+               ▼
+   [ DigitalOcean Droplets / App Platform ] ──► (FastAPI Engine & Background Workers)
                │
        ┌───────┴───────────────────────┐
        ▼                               ▼
@@ -59,9 +68,15 @@ Agentic SEO is architected for both local agentic workflows and 24/7 cloud orche
 (Continuous 360° Audits)          (Keyword Drop & Crawl Error Remediation)
 ```
 
-- **GitHub Webhook Ingestion (`/webhook/github`):** Automatically trigger audits on every commit or PR.
-- **Continuous Google Search Console Sync (`/api/v1/gsc/sync`):** Monitor ranking anomalies and dispatch AI repair patches.
-- **Docker & DigitalOcean Native:** Fully configurable with `docker-compose.yml` and `.do/app.yaml`.
+1. **Edge Layer (Cloudflare Pages & Functions):**
+   - Serves the global, blazing-fast analytics dashboard and documentation (`docs/`).
+   - Receives and validates GitHub Webhooks at edge datacenters worldwide via `functions/api/webhook.js`.
+   - Native support via `wrangler.toml`.
+
+2. **Compute & Orchestration Layer (DigitalOcean App Platform / Droplet):**
+   - Runs the FastAPI orchestration engine (`src/agentic_seo/server.py`).
+   - Executes heavy background crawlers, Playwright headless browser rendering, and Google Search Console batch synchronization.
+   - Fully configurable with `docker-compose.yml` and `.do/app.yaml`.
 
 ## 💻 IDE Compatibility
 

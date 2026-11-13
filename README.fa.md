@@ -7,6 +7,7 @@
 [![Release](https://img.shields.io/github/v/release/dalroot/agentic-seo?style=for-the-badge&color=blue)](https://github.com/dalroot/agentic-seo/releases)
 [![GitHub Pages](https://img.shields.io/github/actions/workflow/status/dalroot/agentic-seo/deploy-pages.yml?branch=master&label=Live%20Site&style=for-the-badge&color=success)](https://dalroot.github.io/agentic-seo)
 [![Deploy to DigitalOcean](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/dalroot/agentic-seo/tree/master)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/dalroot/agentic-seo)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-yellow?style=for-the-badge&logo=python)](https://github.com/dalroot/agentic-seo)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
@@ -49,12 +50,13 @@ agentic-seo serve --port 8000
 
 ---
 
-## ☁️ معماری ابری و خودکارسازی سرور (Cloud Architecture)
+## ☁️ معماری چندابری هیبرید (Hybrid Multi-Cloud Architecture)
 
-پلتفرم Agentic SEO هم به عنوان مهارت لوکال و هم به عنوان یک موتور ابری دائم‌کار روی سرور و کانتینر عمل می‌کند:
+پلتفرم Agentic SEO از یک **معماری هیبریدی مدرن** برای ترکیب سرعت لبه شبکه (Edge) و توان پردازش ابری استفاده می‌کند:
 
 <div align="center">
 
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/dalroot/agentic-seo) &nbsp;&nbsp;
 [![Deploy to DigitalOcean](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/dalroot/agentic-seo/tree/master)
 
 </div>
@@ -62,10 +64,13 @@ agentic-seo serve --port 8000
 <div dir="ltr">
 
 ```text
-[ لایه کلاینت / لبه شبکه (Cloudflare Edge) / گیت‌هاب ]
+[ درخواست‌های جهانی و رویدادهای گیت‌هاب ]
                          │
                          ▼
-   [ سرور ابری Agentic SEO (FastAPI روی DigitalOcean Droplet / App Platform) ]
+   [ Cloudflare Pages & Edge Functions ] ──► (داشبورد فوق‌سریع و دریافت وب‌هوک در لبه شبکه)
+                         │
+                         ▼
+   [ سرور ابری و کانتینر DigitalOcean ] ──► (موتور FastAPI و ورکرهای پس‌زمینه)
                          │
          ┌───────────────┴───────────────────────┐
          ▼                                       ▼
@@ -75,9 +80,15 @@ agentic-seo serve --port 8000
 
 </div>
 
-* **دریافت وب‌هوک‌های گیت‌هاب (`/webhook/github`):** اجرای خودکار تست‌های سئو در هر Commit یا Pull Request.
-* **همگام‌سازی پیوسته با Google Search Console (`/api/v1/gsc/sync`):** شناسایی افت ایمپرشن و ارسال پچ‌های اصلاحی به کدبیس.
-* **سازگاری کامل با Docker و DigitalOcean:** دارای فایل‌های رسمی `docker-compose.yml` و `.do/app.yaml`.
+1. **لایه لبه شبکه (Cloudflare Pages & Functions):**
+   * میزبانی داشبورد گرافیکی آنلاین، مستندات و گزارش‌های فنی (`docs/`).
+   * دریافت و راستی‌آزمایی وب‌هوک‌های گیت‌هاب در ۳۰۰ دیتاسنتر جهانی با `functions/api/webhook.js`.
+   * استقرار مستقیم با `wrangler.toml`.
+
+2. **لایه پردازش و سرور ابری (DigitalOcean App Platform / Droplet):**
+   * اجرای موتور FastAPI برای پردازش ممیزی‌ها (`src/agentic_seo/server.py`).
+   * اجرای کراولرهای پس‌زمینه، رندرینگ مرورگر و همگام‌سازی دسته‌ای سرچ کنسول گوگل.
+   * مجهز به فایل‌های استاندارد `docker-compose.yml` و `.do/app.yaml`.
 
 ---
 
