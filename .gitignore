@@ -45,6 +45,13 @@ Thumbs.db
 node_modules/
 npm-debug.log*
 
+# Confidential & Private Handoff (Anti-Leak Protocol)
+HANDOFF.md
+FINANCIAL_REPORT.md
+*.secret.*
+.env
+.env.local
+
 # Root temp audit outputs (docs/audit-report.html is preserved for GitHub Pages)
 /audit-results.json
 /audit-report.html
