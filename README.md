@@ -7,8 +7,9 @@
 **[🇺🇸 English](README.md) • [🇮🇷 فارسی (Persian)](README.fa.md)**
 
 [![Release](https://img.shields.io/github/v/release/dalroot/agentic-seo?style=for-the-badge&color=blue)](https://github.com/dalroot/agentic-seo/releases)
+[![HOL Guard](https://img.shields.io/endpoint?url=https%3A%2F%2Fhol.org%2Fapi%2Fregistry%2Fbadges%2Fplugin%3Fslug%3Ddalroot%252Fagentic-seo%26metric%3Drelease)](https://hol.org/registry/plugins/dalroot%2Fagentic-seo?utm_source=hol_marketplace&utm_medium=plugins_badge&utm_campaign=plugins&utm_content=dalroot%2Fagentic-seo)
 [![PyPI version](https://img.shields.io/badge/PyPI-v2.0.0-informational?style=for-the-badge&logo=pypi)](https://pypi.org/project/agentic-seo/)
-[![Live Demo](https://img.shields.io/badge/Live_Dashboard-Live-success?style=for-the-badge&logo=cloudflare)](https://dalroot.github.io/agentic-seo)
+[![Live Demo](https://img.shields.io/badge/Live_Dashboard-Live-success?style=for-the-badge&logo=cloudflare)](https://seo.lookanet.app)
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/dalroot/agentic-seo)
 [![Deploy to DigitalOcean](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/dalroot/agentic-seo/tree/master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
@@ -192,6 +193,16 @@ For the complete 89-script inventory and technical documentation:
 - **[Agentic SEO Wiki & Script Documentation](https://github.com/dalroot/agentic-seo/wiki)**
 - **[Live Interactive Dashboard](https://dalroot.github.io/agentic-seo/)**
 </details>
+
+---
+
+## 🛡️ Listed on HOL Plugins
+
+[![HOL Guard](https://img.shields.io/endpoint?url=https%3A%2F%2Fhol.org%2Fapi%2Fregistry%2Fbadges%2Fplugin%3Fslug%3Ddalroot%252Fagentic-seo%26metric%3Drelease)](https://hol.org/registry/plugins/dalroot%2Fagentic-seo?utm_source=hol_marketplace&utm_medium=plugins_badge&utm_campaign=plugins&utm_content=dalroot%2Fagentic-seo)
+
+[agentic-seo on HOL Plugins](https://hol.org/registry/plugins/dalroot%2Fagentic-seo?utm_source=hol_marketplace&utm_medium=plugins_badge&utm_campaign=listed_link&utm_content=dalroot%2Fagentic-seo) shows the latest verified scan, trust score, and release evidence for this plugin.
+
+- **Launch Page:** [HOL Registry Launch](https://hol.org/registry/plugins/dalroot%2Fagentic-seo?launch=b2a066ce-b072-43ac-8962-7e86f771eb37&utm_source=hol_marketplace&utm_medium=plugins_badge&utm_campaign=launch_link&utm_content=dalroot%2Fagentic-seo#launch)
 
 ---
 
